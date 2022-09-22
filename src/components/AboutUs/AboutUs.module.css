@@ -1,0 +1,38 @@
+.container{
+	margin: auto;
+	margin-top: 75px;
+    margin-bottom: 100px;
+	max-width: 1280px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.imgContainer{
+	width: 49%;
+}
+.tag{
+	display: flex;
+	justify-content:left;
+}
+.dataContainer{
+width:49%
+}
+.textDescription{
+	margin-top:50px ;
+	margin-bottom: 40px;
+	font-weight: 400;
+	font-size: 18px;
+		
+	color: #455880;
+	
+}
+.imgElement{
+	width: 100%;
+	display: flex;
+}

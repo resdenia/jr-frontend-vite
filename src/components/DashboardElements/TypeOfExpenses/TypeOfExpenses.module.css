@@ -1,0 +1,35 @@
+.iconWrapper {
+    background-color: #e23738;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 16%);
+    margin: 3px 5px 3px 0px;
+    cursor: pointer;
+}
+.itemWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.iconWrapper {
+    display: flex;
+    margin-right: 10px;
+}
+.infoItem {
+    display: flex;
+}
+.dateItem {
+    display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #7e7e8f;
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

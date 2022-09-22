@@ -1,0 +1,29 @@
+.h3{
+	font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 60px;
+margin: 0;
+}
+.h1{
+	font-style: bold;
+font-weight: 500;
+font-size: 56px;
+line-height: 105%;
+text-align: center;
+}
+
+.h2{
+	font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 60px;
+margin: 0;
+}
+
+.whiteColor{
+	color:#fff
+}
+.violetColor{
+	color:#1E266D
+}

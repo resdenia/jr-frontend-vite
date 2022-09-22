@@ -1,0 +1,59 @@
+.container{
+	margin: auto;
+	margin-top: 75px;
+    margin-bottom: 100px;
+	max-width: 1280px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.iconsSection{
+	width: 66%;
+}
+.description{
+	width:33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+.textDescription{
+	margin-top:50px ;
+	margin-bottom: 40px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 150%;
+	color: #455880;
+	
+}
+.descriptionParagraph{
+	font-size: 18px;
+	line-height: 150%;
+	color: #455880;
+	margin: 0;
+}
+.tag{
+	display: flex;
+	justify-content:left;
+}
+
+.wrapperSection{
+	display: flex;
+	margin-top: 130px;
+    flex-wrap: wrap;
+}
+
+.boxWrapper{
+	margin-bottom: 80px;
+    margin-right: 90px;
+    /* width: 50%; */
+    /* flex: 50%; */
+    /* display: flex; */
+    max-width: 255px;
+}

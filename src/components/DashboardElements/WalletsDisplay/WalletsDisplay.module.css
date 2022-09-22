@@ -1,0 +1,41 @@
+.wallet {
+    display: flex;
+    max-width: 20%;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 16%);
+    flex-direction: column;
+    padding: 15px 24px;
+    width: 100%;
+    margin: 15px 0px;
+}
+.wrapperWallets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wrapperIcon {
+    margin-bottom: 15px;
+}
+.wrapperTitle {
+    margin-bottom: 15px;
+}
+.moneyRed {
+    color: #fff;
+    background-color: #e23738;
+    font-weight: 600;
+    padding: 3px;
+    border-radius: 3px;
+}
+.amountWallet {
+    text-align: right;
+}
+.moneyGreen {
+    color: #fff;
+    background-color: #50d1b2;
+    font-weight: 600;
+    padding: 3px;
+    border-radius: 3px;
+}
+.wrapperWalletHeader {
+    display: flex;
+    justify-content: space-between;
+}

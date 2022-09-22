@@ -1,0 +1,27 @@
+{
+    "name": "jrcruiser",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-calendar": "^3.7.0",
+        "react-charts": "^3.0.0-beta.48",
+        "react-date-picker": "^8.4.0",
+        "react-dom": "^18.2.0",
+        "react-resizable": "^3.0.4",
+        "react-router-dom": "^6.4.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.17",
+        "@types/react-dom": "^18.0.6",
+        "@vitejs/plugin-react": "^2.1.0",
+        "vite": "^3.1.0",
+        "vite-plugin-svgr": "^2.2.1"
+    }
+}

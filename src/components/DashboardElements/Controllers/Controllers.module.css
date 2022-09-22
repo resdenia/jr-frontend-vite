@@ -1,0 +1,47 @@
+.controllers {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.addWallet {
+    display: flex;
+}
+
+.addIncomeType {
+    display: flex;
+}
+.addExpence {
+    display: flex;
+}
+.workTriggers {
+    display: flex;
+    flex-direction: column;
+}
+.addIncome {
+    display: flex;
+    margin-bottom: 10px;
+}
+.addExpence {
+    display: flex;
+}
+.iconWrapperGreen {
+    background-color: #50d1b2;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 10px;
+}
+.iconWrapperRed {
+    background-color: #e23738;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 10px;
+}

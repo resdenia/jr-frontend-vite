@@ -1,0 +1,39 @@
+.infoRow {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.datePicker {
+    width: 100%;
+}
+.wrapperSection {
+    margin: 30px 0px;
+    width: 100%;
+    border: 1px solid #e8edf2;
+    border-radius: 16px;
+    padding: 15px 24px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.wrapperTwoColumns {
+    display: flex;
+    justify-content: space-between;
+}
+.wrapperTwoColumns .wrapperSection {
+    width: 48%;
+}
+.buttonAll {
+    display: flex;
+    background: #7364db;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+.allData {
+    display: flex;
+}
+.dateWrapp {
+    margin: 0px 5px;
+}

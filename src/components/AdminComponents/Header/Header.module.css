@@ -1,0 +1,25 @@
+.wrapperHeader {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    padding: 10px 15px;
+    max-height: 65px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 16%);
+    z-index: 100;
+    position: relative;
+}
+.logoElement {
+    margin: 0;
+}
+.rowHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.wrapperLogo {
+    display: flex;
+}
+.wrapperMenu {
+    display: flex;
+}

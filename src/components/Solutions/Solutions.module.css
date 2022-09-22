@@ -1,0 +1,28 @@
+.solutionsWrapper{
+	margin-top: 75px;
+	margin-bottom: 100px;
+}
+.tagContainer{
+    display: flex;
+	justify-content: center;
+}
+.titleContainer{
+	margin-bottom: 40px;
+	display: flex;
+    justify-content: center;
+}
+.descriptionContainer p{
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 150%;
+	text-align: center;
+	color: #455880;
+}
+.iconsSection{
+	max-width: 1190px;
+	width: 100%;
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	margin-top: 100px;
+}

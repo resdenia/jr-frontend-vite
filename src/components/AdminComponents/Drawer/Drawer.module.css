@@ -1,0 +1,37 @@
+.wrapperDrawer {
+    display: flex;
+    height: 100%;
+    /* flex-direction: column; */
+    width: 60px;
+    background-color: #fff;
+    position: absolute;
+    padding-top: 40px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+.drawerMenu {
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+}
+.drawerMenuItem {
+    display: flex;
+    background-color: rgb(255 255 255 / 81%);
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 16%);
+}
+.drawerMenuItemLink {
+    line-height: 24px;
+    height: 24px;
+}
+.iconElementPath {
+    fill: var(--secondary);
+}
+.iconElement {
+    width: 24px;
+    height: 24px;
+}

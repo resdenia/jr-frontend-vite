@@ -1,0 +1,34 @@
+.title{
+	font-weight: 400;
+font-size: 16px;
+line-height: 27px;
+text-align: center;
+color: rgba(69, 88, 128, 0.5);
+}
+.titleWrapper{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top:70px;
+}
+
+.trustedRow{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.trustedLogo{
+	display: flex;
+	width: 100%;
+    justify-content: space-between;
+	margin-top: 30px;
+}
+.logos{
+	/* display: flex; */
+	/* max-width: 110px; */
+}
+.logoElement{
+	width: 100%;
+	display: block;
+}

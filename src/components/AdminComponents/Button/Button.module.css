@@ -1,0 +1,10 @@
+.blueColor {
+    background: #3751ff;
+    border-radius: 10px;
+    color: #fff;
+    padding: 17px 28px;
+    text-decoration: none;
+    border: 0px;
+    width: 100%;
+    cursor: pointer;
+}

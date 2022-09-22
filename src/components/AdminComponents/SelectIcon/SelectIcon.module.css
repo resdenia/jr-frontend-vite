@@ -1,0 +1,40 @@
+.iconWrapper {
+    background-color: #21092f;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 16%);
+    margin: 3px;
+    cursor: pointer;
+}
+.listDropDown {
+    position: absolute;
+    max-width: 300px;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 16%);
+    width: 100%;
+    height: 300px;
+    overflow: scroll;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.iconWrapper {
+    display: flex;
+}
+.iconContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.buttonAdd {
+    color: #fff;
+    background: #3751ff;
+    border-radius: 10px;
+    padding: 3px 5px;
+    margin: 5px 0px;
+    width: 100%;
+    max-width: 100px;
+    text-align: center;
+    cursor: pointer;
+}

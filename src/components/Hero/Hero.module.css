@@ -1,0 +1,29 @@
+.heroWrapper{
+	background: #FAFBFF;
+	padding: 135px 0px;
+}
+.descriptionWrapper{
+	font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+text-align: center;
+color: #455880;
+}
+.iconWrapper{
+	margin-bottom: 45px;
+	display: flex;
+    justify-content: center;
+}
+.descriptionWrapper{
+	width: 60%;
+	margin: auto;
+	margin-top: 45px;
+	font-size: 14px;
+
+}
+.buttonWrapper{
+	margin-top: 67px;
+	display: flex;
+    justify-content: center;
+
+}

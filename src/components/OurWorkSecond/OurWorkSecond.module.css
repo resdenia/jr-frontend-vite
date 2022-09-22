@@ -1,0 +1,85 @@
+.wrapperOurWork {
+    display: block;
+}
+.wrapperOurWorkContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.wrapperTitle {
+    display: block;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wrapperOurWorkContent {
+    display: flex;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+.imageContainer {
+    display: flex;
+    width: 65%;
+    position: relative;
+}
+.boxContainer {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+}
+.iconBoxWrapper {
+    display: flex;
+    border-bottom: 1px solid rgba(69, 88, 128, 0.2);
+    padding: 35px 0px;
+}
+.iconBoxWrapper:last-child {
+    border-bottom: 0px;
+}
+.iconBoxEl {
+    display: flex;
+    margin-right: 45px;
+}
+.iconBoxDescription {
+    display: flex;
+    flex-direction: column;
+}
+.iconBoxTitle {
+    display: flex;
+}
+.iconBoxTitle h4 {
+    margin: 4px 0px;
+}
+.iconBoxText {
+    display: flex;
+}
+.iconBoxText p {
+    margin: 4px 0px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* or 150% */
+
+    color: #455880;
+}
+.iconBoxParagraph {
+    display: flex;
+}
+
+.imageFirst {
+    display: block;
+    position: absolute;
+}
+.imageSecond {
+    display: block;
+    position: absolute;
+    margin-top: -190px;
+    left: 37%;
+    z-index: 1;
+}
+.imageThird {
+    display: block;
+    position: absolute;
+}

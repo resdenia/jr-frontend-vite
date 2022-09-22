@@ -1,0 +1,17 @@
+.tagWrapper{
+padding: 12px 10px;
+border-radius: 5px;
+}
+.tagWrapper.violet{
+	background-color: #F3F5FE;
+}
+.violet{
+	color: #3751FF;
+}
+.tagWrapper.red{
+	background-color:#F9F3FE;
+}
+.red{
+	color:#FF2E6A;
+}
+

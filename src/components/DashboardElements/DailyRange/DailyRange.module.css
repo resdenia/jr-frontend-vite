@@ -1,0 +1,40 @@
+.rangeContainer {
+    width: 100%;
+    text-align: right;
+}
+.dateWrapp {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #7e7e8f;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.dateWrappController {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.calendarWrapp {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.buttonAll {
+    display: flex;
+    background: #7364db;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+.allData {
+    display: flex;
+}
+.dateWrapp {
+    margin: 0px 5px;
+}
