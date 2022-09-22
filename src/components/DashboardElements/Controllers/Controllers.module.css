@@ -6,23 +6,28 @@
 }
 .addWallet {
     display: flex;
+    align-items: center;
 }
 
 .addIncomeType {
     display: flex;
+    align-items: center;
 }
 .addExpence {
     display: flex;
+    align-items: center;
 }
 .workTriggers {
     display: flex;
     flex-direction: column;
 }
 .addIncome {
+    align-items: center;
     display: flex;
     margin-bottom: 10px;
 }
 .addExpence {
+    align-items: center;
     display: flex;
 }
 .iconWrapperGreen {
