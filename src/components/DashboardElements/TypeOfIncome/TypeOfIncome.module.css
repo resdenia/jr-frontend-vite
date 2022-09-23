@@ -30,7 +30,6 @@
     line-height: 16px;
     color: #7e7e8f;
     cursor: pointer;
-    display: flex;
     justify-content: start;
     align-items: center;
 }

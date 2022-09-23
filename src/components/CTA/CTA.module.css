@@ -1,32 +1,32 @@
-.mainWrapper{
-	background-color: var(--blue-color);
-	max-width: 1280px;
-	width:100%;
-	border-radius: 18px;
-	display: flex;
-	margin: auto;
+.mainWrapper {
+    background-color: var(--blue-color);
+    max-width: 1280px;
+    width: 100%;
+    border-radius: 18px;
+    display: flex;
+    margin: auto;
 }
-.row{
-	padding: 85px 131px 115px 131px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.row {
+    padding: 85px 131px 115px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.sectionTitle{
-	width: 60%;
+.sectionTitle {
+    width: 60%;
 }
-.buttonWrapper{
-	width: 25%;
+.buttonWrapper {
+    width: 25%;
 
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.buttonDescription{
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 125%;
-	/* identical to box height, or 20px */	
-	text-align: right;
-	color: #DFE0EB;
+.buttonDescription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 125%;
+    /* identical to box height, or 20px */
+    text-align: right;
+    color: #dfe0eb;
 }
