@@ -11,7 +11,8 @@
     height: 100%;
     padding-left: 80px;
     margin-top: 20px;
-    max-width: 1400px;
+    /* max-width: 1400px; */
+    padding-right: 20px;
     width: 100%;
     box-sizing: border-box;
 }
