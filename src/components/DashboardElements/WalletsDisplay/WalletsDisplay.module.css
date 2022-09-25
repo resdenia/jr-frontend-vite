@@ -39,3 +39,7 @@
     display: flex;
     justify-content: space-between;
 }
+.chart {
+    position: relative;
+    width: 100%;
+}

@@ -25,7 +25,9 @@ class Auth {
 
     getUser = () => {};
     login = () => {};
-    register = () => {};
+    register = async (body) => {
+        return await this.customFetch('api/auth/register', body, 'POST');
+    };
 }
 
 const auth = new Auth();

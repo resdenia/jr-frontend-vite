@@ -1,0 +1,81 @@
+.signInContainer {
+    background-color: #e8edf2;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInRow {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #e8edf2;
+    border-radius: 16px;
+    padding: 40px;
+}
+.signInIconWrapper {
+    display: flex;
+    margin: auto;
+    margin-bottom: 27px;
+}
+.signInTitle h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #07070c;
+    margin: 0;
+}
+
+.signInDescription {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #7e7e8f;
+    margin: 5px 0px 30px 0px;
+}
+.button {
+    background: #7364db;
+    border-radius: 8px;
+    border: 0px;
+    color: #fff;
+    width: 100%;
+    padding: 14px 0px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+.signInRow {
+    max-width: 440px;
+    width: 100%;
+}
+.linkForGetPassword {
+    text-align: right;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.linkForGetPassword a {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #8083a3;
+}
+.haveAccount {
+    width: 100%;
+    text-align: center;
+}
+
+.haveAccount p {
+    font-size: 14px;
+    line-height: 16px;
+    color: #07070c;
+}
+
+.haveAccount a {
+    color: #7364db;
+    text-decoration: none;
+}

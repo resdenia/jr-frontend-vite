@@ -3,6 +3,7 @@ import styles from './SignIn.module.css';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
 import { Link } from 'react-router-dom';
+import auth from '../../api/auth';
 
 const SignIn = () => {
     const onSubmitHandler = (e) => {
