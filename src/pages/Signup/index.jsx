@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './SignUp.module.css';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-import { Link } from 'react-router-dom';
+// import { useNavigate } from "react-router-dom";
+
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../api/auth';
 
 const Signup = () => {
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
@@ -29,6 +33,7 @@ const Signup = () => {
             .then((res) => res.json())
             .then((result) => {
                 localStorage.setItem('token', result.token);
+                navigate('/dashboard');
             })
             .catch((err) => {
                 setErrorMessage(err);
