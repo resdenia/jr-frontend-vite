@@ -6,23 +6,33 @@ import { Link } from 'react-router-dom';
 import auth from '../../api/auth';
 
 const Signup = () => {
-    // const []
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [errorStatus, setErrorStatus] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const onSubmitHandler = async (e) => {
-        // console.log(e.target.email);
+        setErrorMessage('');
+        setErrorStatus(false);
         e.preventDefault();
         const { email, name, password } = e.target;
 
-        auth.register({
-            email: email.value,
-            name: name.value,
-            password: password.value,
-        })
+        await auth
+            .register(
+                JSON.stringify({
+                    email: email.value,
+                    name: name.value,
+                    password: password.value,
+                }),
+            )
             .then((res) => res.json())
             .then((result) => {
                 localStorage.setItem('token', result.token);
             })
             .catch((err) => {
+                setErrorMessage(err);
+                setErrorStatus(true);
                 console.log(err);
             });
     };
@@ -95,23 +105,34 @@ const Signup = () => {
                         inputPlaceholder='Name'
                         type='text'
                         name='name'
+                        value={name}
+                        onChange={setName}
                     />
                     <Input
                         labelName='E-mail or phone number'
                         inputPlaceholder='Email'
                         type='email'
                         name='email'
+                        value={email}
+                        onChange={setEmail}
                     />
                     <Input
                         labelName='Password'
                         inputPlaceholder='Password'
                         type='password'
                         name='password'
+                        value={password}
+                        onChange={setPassword}
                     />
                     <button className={styles.button} type='submit'>
-                        Login
+                        Register
                     </button>
                 </form>
+                {errorStatus ? (
+                    <div className={styles.error}>{errorMessage}</div>
+                ) : (
+                    ''
+                )}
                 <div className={styles.forgotPassword}>
                     <p className={styles.linkForGetPassword}>
                         {' '}
@@ -122,7 +143,7 @@ const Signup = () => {
                 <div className={styles.haveAccount}>
                     <p>
                         {' '}
-                        Don't have an account? <Link to='/signup'>Sign up</Link>
+                        Don't have an account? <Link to='/signup'>Sign in</Link>
                     </p>
                 </div>
             </div>
