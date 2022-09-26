@@ -13,6 +13,7 @@ export const UserState = ({ children }) => {
     const initialState = {
         userId: null,
         user: null,
+        currentUser: false,
     };
     const [state, dispatch] = useReducer(userReducer, initialState);
 
@@ -49,6 +50,7 @@ export const UserState = ({ children }) => {
                 addTypeOfIncome,
                 addTypeOfExpence,
                 user: state.user,
+                currentUser: state.currentUser,
             }}
         >
             {children}
