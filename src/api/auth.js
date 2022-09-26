@@ -11,7 +11,6 @@ class Auth {
     };
 
     customFetch = async (slug, body, method, headers) => {
-        console.log(body);
         const bodyDisplay = body ? body : {};
         return await fetch(`${this.baseUrl}/${slug}`, {
             method,
@@ -24,7 +23,9 @@ class Auth {
     };
 
     getUser = () => {};
-    login = () => {};
+    login = async (body) => {
+        return await this.customFetch('api/auth/login', body, 'POST');
+    };
     register = async (body) => {
         return await this.customFetch('api/auth/register', body, 'POST');
     };

@@ -9,11 +9,30 @@ const SignIn = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
     const [errorStatus, setErrorStatus] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const onSubmitHandler = (e) => {
+    const onSubmitHandler = async (e) => {
+        setErrorMessage('');
+        setErrorStatus(false);
         e.preventDefault();
+
+        await auth
+            .login(
+                JSON.stringify({
+                    email: email.value,
+                    password: password.value,
+                }),
+            )
+            .then((res) => res.json())
+            .then((result) => {
+                // localStorage.setItem('token', result.token);
+                navigate('/signin');
+            })
+            .catch((err) => {
+                setErrorMessage(err);
+                setErrorStatus(true);
+                console.log(err);
+            });
     };
 
     return (
@@ -77,8 +96,8 @@ const SignIn = () => {
                     </p>
                 </div>
                 <form
-                    onSubmit={() => {
-                        onSubmitHandler();
+                    onSubmit={(e) => {
+                        onSubmitHandler(e);
                     }}
                 >
                     <Input
@@ -86,12 +105,16 @@ const SignIn = () => {
                         inputPlaceholder='Email'
                         type='email'
                         name='email'
+                        value={email}
+                        onChange={setEmail}
                     />
                     <Input
                         labelName='Password'
                         inputPlaceholder='Password'
                         type='password'
                         name='password'
+                        value={password}
+                        onChange={setPassword}
                     />
                     <button className={styles.button} type='submit'>
                         Login

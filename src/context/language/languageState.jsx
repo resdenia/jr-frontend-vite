@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { LanguageContext } from './languageContext';
 import { languageReducer } from './languageReducer';
-import { TOGGLE_LANG } from '../types';
+import { ADD_INCOME, ADD_WALLET, TOGGLE_LANG } from '../types';
 
 export const LanguageState = ({ children }) => {
     const initialState = {
