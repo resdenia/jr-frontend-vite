@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './SignIn.module.css';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../api/auth';
 
 const SignIn = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+    const [errorStatus, setErrorStatus] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const onSubmitHandler = (e) => {
         e.preventDefault();
     };
@@ -90,6 +96,11 @@ const SignIn = () => {
                     <button className={styles.button} type='submit'>
                         Login
                     </button>
+                    {errorStatus ? (
+                        <div className={styles.error}>{errorMessage}</div>
+                    ) : (
+                        ''
+                    )}
                 </form>
                 <div className={styles.forgotPassword}>
                     <p className={styles.linkForGetPassword}>

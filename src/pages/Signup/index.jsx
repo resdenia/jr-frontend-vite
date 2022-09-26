@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import styles from './SignUp.module.css';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-// import { useNavigate } from "react-router-dom";
 
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../api/auth';
@@ -32,8 +31,8 @@ const Signup = () => {
             )
             .then((res) => res.json())
             .then((result) => {
-                localStorage.setItem('token', result.token);
-                navigate('/dashboard');
+                // localStorage.setItem('token', result.token);
+                navigate('/signin');
             })
             .catch((err) => {
                 setErrorMessage(err);
