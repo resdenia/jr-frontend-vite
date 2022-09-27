@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import styles from './SignIn.module.css';
+import { UserContext } from '../../context/user/userContext';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,6 +8,7 @@ import auth from '../../api/auth';
 
 const SignIn = () => {
     const navigate = useNavigate();
+    const { loginUser, setCurrentUser } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorStatus, setErrorStatus] = useState(false);
@@ -25,6 +27,8 @@ const SignIn = () => {
             .then((res) => res.json())
             .then((result) => {
                 localStorage.setItem('jwtToken', result.token);
+                setCurrentUser(true);
+                loginUser(result.user);
                 navigate('/dashboard/wallets');
             })
             .catch((err) => {
@@ -105,7 +109,9 @@ const SignIn = () => {
                         type='email'
                         name='email'
                         value={email}
-                        onChange={setEmail}
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }}
                     />
                     <Input
                         labelName='Password'
@@ -113,7 +119,9 @@ const SignIn = () => {
                         type='password'
                         name='password'
                         value={password}
-                        onChange={setPassword}
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
                     />
                     <button className={styles.button} type='submit'>
                         Login
@@ -126,14 +134,12 @@ const SignIn = () => {
                 </form>
                 <div className={styles.forgotPassword}>
                     <p className={styles.linkForGetPassword}>
-                        {' '}
                         <Link to='/forgot-password'> Forgot password?</Link>
                     </p>
                 </div>
                 <div className={styles.socialWrapper}></div>
                 <div className={styles.haveAccount}>
                     <p>
-                        {' '}
                         Don't have an account? <Link to='/signup'>Sign up</Link>
                     </p>
                 </div>

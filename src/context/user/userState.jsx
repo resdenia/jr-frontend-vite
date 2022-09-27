@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import { UserContext } from './userContext';
 import { userReducer } from './userReducer';
 import {
@@ -19,8 +19,11 @@ export const UserState = ({ children }) => {
     const [state, dispatch] = useReducer(userReducer, initialState);
 
     // const switchLang = (lang) => dispatch({ type: TOGGLE_LANG, payload: lang });
-    const setCurrentUser = (jwt) =>
-        useCallback(dispatch({ type: CURRENT_USER, payload: user }));
+    const setCurrentUser = (currentUser) =>
+        dispatch({ type: CURRENT_USER, payload: currentUser });
+    const loginUser = (user) => {
+        dispatch({ type: CURRENT_USER, payload: user });
+    };
 
     const addWallet = (name, balance) =>
         dispatch({ type: ADD_WALLET, payload: { name, balance } });
@@ -53,6 +56,7 @@ export const UserState = ({ children }) => {
                 addExpence,
                 addTypeOfIncome,
                 addTypeOfExpence,
+                loginUser,
                 user: state.user,
                 currentUser: state.currentUser,
             }}
