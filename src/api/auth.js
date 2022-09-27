@@ -11,6 +11,7 @@ class Auth {
     };
 
     customFetch = async (slug, body, method, headers) => {
+        console.log(body);
         const bodyDisplay = body ? body : {};
         return await fetch(`${this.baseUrl}/${slug}`, {
             method,

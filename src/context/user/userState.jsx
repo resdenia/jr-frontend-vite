@@ -7,6 +7,7 @@ import {
     ADD_INCOME,
     ADD_EXPENCE,
     ADD_TYPE_OF_INCOME,
+    CURRENT_USER,
 } from '../types';
 
 export const UserState = ({ children }) => {
@@ -18,6 +19,8 @@ export const UserState = ({ children }) => {
     const [state, dispatch] = useReducer(userReducer, initialState);
 
     // const switchLang = (lang) => dispatch({ type: TOGGLE_LANG, payload: lang });
+    const setCurrentUser = (jwt) =>
+        useCallback(dispatch({ type: CURRENT_USER, payload: user }));
 
     const addWallet = (name, balance) =>
         dispatch({ type: ADD_WALLET, payload: { name, balance } });
@@ -44,6 +47,7 @@ export const UserState = ({ children }) => {
     return (
         <UserContext.Provider
             value={{
+                setCurrentUser,
                 addWallet,
                 addIncome,
                 addExpence,

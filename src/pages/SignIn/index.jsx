@@ -15,18 +15,17 @@ const SignIn = () => {
         setErrorMessage('');
         setErrorStatus(false);
         e.preventDefault();
-
         await auth
             .login(
                 JSON.stringify({
-                    email: email.value,
-                    password: password.value,
+                    email,
+                    password,
                 }),
             )
             .then((res) => res.json())
             .then((result) => {
-                // localStorage.setItem('token', result.token);
-                navigate('/signin');
+                localStorage.setItem('jwtToken', result.token);
+                navigate('/dashboard/wallets');
             })
             .catch((err) => {
                 setErrorMessage(err);

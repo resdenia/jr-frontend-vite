@@ -6,3 +6,4 @@ export const ADD_EXPENCE = 'ADD_EXPENCE';
 export const ADD_WALLET = 'ADD_WALLET';
 export const ADD_TYPE_OF_INCOME = 'ADD_TYPE_OF_INCOME';
 export const ADD_TYPE_OF_EXPENCE = 'ADD_TYPE_OF_EXPENCE';
+export const CURRENT_USER = 'CURRENT_USER';
