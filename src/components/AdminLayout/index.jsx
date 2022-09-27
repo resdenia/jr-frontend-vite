@@ -10,24 +10,32 @@ import auth from '../../api/auth';
 
 const AdminLayout = ({ children }) => {
     const { currentUser, setCurrentUser, loginUser } = useContext(UserContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        // navigate('/signin');
+
         const token = localStorage.getItem('jwtToken');
-        if (!currentUser) {
-            auth.getUser(token)
-                .then((res) => {
-                    if (res.ok) {
-                        setCurrentUser(true);
-                        loginUser(res.user);
-                    } else {
-                        useNavigate('/signin');
-                        // throw Error('didnt find user');
-                    }
-                })
-                .catch((err) => {
-                    console.log(err);
-                    useNavigate('/signin');
-                });
+        if (token) {
+            if (!currentUser) {
+                auth.getUser(JSON.stringify({ token }))
+                    .then((res) => {
+                        if (res.ok) {
+                            setCurrentUser(true);
+                            loginUser(res.user);
+                        } else {
+                            console.log('here');
+                            navigate('/signin');
+                            // throw Error('didnt find user');
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                        navigate('/signin');
+                    });
+            }
+        } else {
+            navigate('/signin');
         }
     }, []);
 

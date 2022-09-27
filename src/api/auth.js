@@ -22,7 +22,7 @@ class Auth {
                 'Content-Type': 'application/json',
                 ...headerToSend,
             },
-            body: JSON.stringify(bodyDisplay),
+            body: bodyDisplay,
         });
     };
 
