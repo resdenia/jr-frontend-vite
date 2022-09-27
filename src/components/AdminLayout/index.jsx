@@ -13,21 +13,21 @@ const AdminLayout = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // navigate('/signin');
-
         const token = localStorage.getItem('jwtToken');
         if (token) {
             if (!currentUser) {
-                auth.getUser(JSON.stringify({ token }))
+                auth.getUser(JSON.stringify({ token: token }))
                     .then((res) => {
                         if (res.ok) {
-                            setCurrentUser(true);
-                            loginUser(res.user);
+                            return res.json();
                         } else {
-                            console.log('here');
                             navigate('/signin');
-                            // throw Error('didnt find user');
                         }
+                    })
+                    .then((res) => {
+                        console.log(res);
+                        setCurrentUser(true);
+                        loginUser(res.user);
                     })
                     .catch((err) => {
                         console.log(err);

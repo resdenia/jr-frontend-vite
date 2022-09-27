@@ -11,7 +11,6 @@ class Auth {
     };
 
     customFetch = async (slug, body, method, headers) => {
-        console.log(body);
         const bodyDisplay = body ? body : {};
         if (body) {
         }
@@ -27,8 +26,8 @@ class Auth {
     };
 
     getUser = async (token) => {
-        return await this.customFetch('api/auth/currentUser', {}, 'POST', {
-            Authorization: `Bearer ${token}`,
+        return await this.customFetch('api/auth/currentUser', token, 'POST', {
+            Authorization: `Bearer ${JSON.parse(token).token}`,
         });
     };
     login = async (body) => {

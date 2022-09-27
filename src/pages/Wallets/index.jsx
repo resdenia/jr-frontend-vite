@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
+import { UserContext } from '../../context/user/userContext';
+
 import AdminLayout from '../../components/AdminLayout';
 import Controllers from '../../components/DashboardElements/Controllers';
 import DailyRange from '../../components/DashboardElements/DailyRange';
@@ -100,6 +102,10 @@ const dumpTypeExpence = [
 ];
 
 const Wallets = () => {
+    const { user } = useContext(UserContext);
+
+    console.log(user);
+
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [typeOfPopup, setTypeOfPopup] = useState('addWallet');
     const [wallets, setWallets] = useState({});
