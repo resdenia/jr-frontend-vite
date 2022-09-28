@@ -15,6 +15,11 @@ export const UserState = ({ children }) => {
         userId: null,
         user: null,
         currentUser: false,
+        wallets: [],
+        typeOfExpence: [],
+        typeOfIncome: [],
+        expences: [],
+        incomes: [],
     };
     const [state, dispatch] = useReducer(userReducer, initialState);
 

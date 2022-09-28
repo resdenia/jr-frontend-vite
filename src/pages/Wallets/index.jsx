@@ -131,8 +131,14 @@ const Wallets = () => {
         setVisiblePopup(true);
     };
     const onSubmit = (e, type) => {
-        console.log(e);
-        console.log(type);
+        switch (type) {
+            case 'addWallet':
+                return;
+            case 'addIncome':
+                retrun;
+            default:
+                break;
+        }
     };
     return (
         <>
