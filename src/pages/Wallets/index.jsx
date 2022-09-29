@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { UserContext } from '../../context/user/userContext';
 
-import { budget } from '../../api/auth';
 import AdminLayout from '../../components/AdminLayout';
 import Controllers from '../../components/DashboardElements/Controllers';
 import DailyRange from '../../components/DashboardElements/DailyRange';
@@ -103,7 +102,7 @@ const dumpTypeExpence = [
 ];
 
 const Wallets = () => {
-    const { user } = useContext(UserContext);
+    const { user, addWallet } = useContext(UserContext);
 
     console.log(user);
 
@@ -134,10 +133,13 @@ const Wallets = () => {
     const onSubmit = async (e, type, icon = '') => {
         switch (type) {
             case 'addWallet':
-                await budget.addWallet({
+                addWallet({
                     iconName: icon,
-                    name: e.target.name,
+                    name: e.target.name.value,
+                    amount: e.target.amount.value,
                 });
+                // setVisiblePopup(false);
+
                 return;
             case 'addIncome':
                 retrun;

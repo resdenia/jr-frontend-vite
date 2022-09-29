@@ -1,4 +1,6 @@
 import React, { useReducer, useCallback } from 'react';
+import budget from '../../api/app';
+
 import { UserContext } from './userContext';
 import { userReducer } from './userReducer';
 import {
@@ -33,8 +35,10 @@ export const UserState = ({ children }) => {
         dispatch({ type: CURRENT_USER, payload: user });
     };
 
-    const addWallet = (name, balance) =>
-        dispatch({ type: ADD_WALLET, payload: { name, balance } });
+    const addWallet = async (wallet) => {
+        await budget.addWallet(JSON.stringify({ ...wallet }));
+        dispatch({ type: ADD_WALLET, payload: { wallet } });
+    };
 
     const addIncome = (date, name, amount, wallet) =>
         dispatch({ type: ADD_INCOME, payload: { date, name, amount, wallet } });

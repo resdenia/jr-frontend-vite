@@ -24,7 +24,8 @@ class Budget {
         });
     };
     addWallet = async (body) => {
-        const token = localStorage.setItem('jwtToken');
+        console.log('here');
+        const token = localStorage.getItem('jwtToken');
         return await this.customFetch('api/wallet/add', body, 'POST', {
             Authorization: `Bearer ${token}`,
         });
