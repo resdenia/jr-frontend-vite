@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './AddRegularExpence.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
+import SelectIcon from '../../AdminComponents/SelectIcon';
 
 const AddRegularExpence = ({ onSubmitHandler }) => {
     return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { UserContext } from '../../context/user/userContext';
 
+import { budget } from '../../api/auth';
 import AdminLayout from '../../components/AdminLayout';
 import Controllers from '../../components/DashboardElements/Controllers';
 import DailyRange from '../../components/DashboardElements/DailyRange';
@@ -130,9 +131,13 @@ const Wallets = () => {
         setTypeOfPopup(type);
         setVisiblePopup(true);
     };
-    const onSubmit = (e, type) => {
+    const onSubmit = async (e, type, icon = '') => {
         switch (type) {
             case 'addWallet':
+                await budget.addWallet({
+                    iconName: icon,
+                    name: e.target.name,
+                });
                 return;
             case 'addIncome':
                 retrun;

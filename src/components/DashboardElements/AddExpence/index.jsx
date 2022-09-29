@@ -3,7 +3,6 @@ import styles from './AddExpence.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
 import DailyRange from '../DailyRange';
-import SelectIcon from '../../AdminComponents/SelectIcon';
 const AddExpence = ({ onSubmitHandler }) => {
     const datePicker = (data) => {
         console.log(data);
@@ -19,13 +18,12 @@ const AddExpence = ({ onSubmitHandler }) => {
                 }}
             >
                 <p>Choose Wallet</p>
-                <p>Choose income</p>
+
                 <DailyRange
                     onChangeHandler={(data) => {
                         datePicker(data);
                     }}
                 />
-                <SelectIcon />
                 <Input
                     labelName='Expence'
                     inputPlaceholder='1'

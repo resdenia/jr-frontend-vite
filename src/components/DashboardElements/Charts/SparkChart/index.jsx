@@ -30,7 +30,7 @@ export default function Line() {
 
     return (
         <>
-            <ResizableBox width={200} height={40}>
+            <ResizableBox width={300} height={40}>
                 <Chart
                     options={{
                         data,

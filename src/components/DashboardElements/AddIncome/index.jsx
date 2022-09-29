@@ -3,7 +3,6 @@ import styles from './AddIncome.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
 import DailyRange from '../DailyRange';
-import SelectIcon from '../../AdminComponents/SelectIcon';
 
 const AddIncome = ({ onSubmitHandler }) => {
     const datePicker = (data) => {
@@ -19,21 +18,14 @@ const AddIncome = ({ onSubmitHandler }) => {
                     onSubmitHandler(e, 'addIncome');
                 }}
             >
-                {/* <Input
-                    labelName='Type of Income'
-                    inputPlaceholder='Salary, other'
-                    type='text'
-                    name='name'
-                /> */}
                 <p>Choose Wallet</p>
-                <p>Choose income</p>
-                <p>Choose currency</p>
+                <p>Choose Type</p>
+
                 <DailyRange
                     onChangeHandler={(data) => {
                         datePicker(data);
                     }}
                 />
-                <SelectIcon />
                 <Input
                     labelName='Income'
                     inputPlaceholder='1'

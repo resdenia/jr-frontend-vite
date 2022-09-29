@@ -3,19 +3,26 @@ import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
 
 import styles from './SelectIcon.module.css';
 
-const renderIcons = (Icons, type) => {
+const renderIcons = (Icons, onSet, setVisibleSelect) => {
     const keys = Object.keys(Icons);
 
     return keys.map((key, id) => {
         const IconDisplay = Icons[key];
         return (
-            <div className={styles.iconWrapper} key={`${key}_${id}`}>
+            <div
+                onClick={() => {
+                    onSet(key);
+                    setVisibleSelect(false);
+                }}
+                className={styles.iconWrapper}
+                key={`${key}_${id}`}
+            >
                 <IconDisplay />
             </div>
         );
     });
 };
-const SelectIcon = () => {
+const SelectIcon = ({ onSet }) => {
     const [preview, setPreview] = useState(null);
     const [visibleSelect, setVisibleSelect] = useState(false);
     const ref = useRef(null);
@@ -47,7 +54,7 @@ const SelectIcon = () => {
                 <div className={styles.listDropDown} ref={ref}>
                     <h3>Icons</h3>
                     <div className={styles.iconContainer}>
-                        {renderIcons(IconArrow)}
+                        {renderIcons(IconArrow, onSet, setVisibleSelect)}
                     </div>
                 </div>
             ) : (

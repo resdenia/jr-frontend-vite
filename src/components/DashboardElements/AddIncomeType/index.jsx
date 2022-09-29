@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './AddIncomeType.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
+import SelectIcon from '../../AdminComponents/SelectIcon';
 
 const AddIncomeType = ({ onSubmitHandler }) => {
     return (
@@ -14,6 +15,7 @@ const AddIncomeType = ({ onSubmitHandler }) => {
                     onSubmitHandler(e, 'addIncomeType');
                 }}
             >
+                <SelectIcon />
                 <Input
                     labelName='Type of Income'
                     inputPlaceholder='Salary, other'

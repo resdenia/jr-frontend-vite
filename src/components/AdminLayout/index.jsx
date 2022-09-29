@@ -19,6 +19,7 @@ const AdminLayout = ({ children }) => {
                 auth.getUser(JSON.stringify({ token: token }))
                     .then((res) => {
                         if (res.ok) {
+                            // console.log(res.json());
                             return res.json();
                         } else {
                             navigate('/signin');
@@ -26,6 +27,10 @@ const AdminLayout = ({ children }) => {
                     })
                     .then((res) => {
                         console.log(res);
+                        if (!res.user) {
+                            localStorage.removeItem('jwtToken');
+                            navigate('/signin');
+                        }
                         setCurrentUser(true);
                         loginUser(res.user);
                     })
