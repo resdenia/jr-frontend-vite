@@ -40,24 +40,42 @@ export const UserState = ({ children }) => {
         dispatch({ type: ADD_WALLET, payload: { wallet } });
     };
 
-    const addIncome = (date, name, amount, wallet) =>
-        dispatch({ type: ADD_INCOME, payload: { date, name, amount, wallet } });
-    const addExpence = (date, name, amount, wallet) =>
+    const addIncome = async (date, amount, wallet, typeOfIncome) => {
+        const income = await budget.addIncome(
+            JSON.stringify({ date, amount, wallet, typeOfIncome }),
+        );
+
+        dispatch({ type: ADD_INCOME, payload: income });
+    };
+
+    const addExpence = async (date, typeOfExpence, amount, wallet) => {
+        const expence = await budget.addExpence(
+            JSON.stringify({ date, amount, wallet, typeOfExpence }),
+        );
         dispatch({
             type: ADD_EXPENCE,
-            payload: { date, name, amount, wallet },
+            payload: expence,
         });
+    };
 
-    const addTypeOfIncome = (name, amount, prognose) =>
+    const addTypeOfIncome = async (name, prognose, icon) => {
+        const typeOfIncome = await budget.addTypeOfIncome(
+            JSON.stringify({ name, prognose, icon }),
+        );
         dispatch({
             type: ADD_TYPE_OF_INCOME,
-            payload: { date, name, amount, wallet },
+            payload: typeOfIncome,
         });
-    const addTypeOfExpence = (name, amount, prognose) =>
+    };
+    const addTypeOfExpence = async (name, icon, prognose) => {
+        const typeOfExpence = await budget.addTypeOfExpence(
+            JSON.stringify({ name, icon, prognose }),
+        );
         dispatch({
             type: ADD_TYPE_OF_EXPENCE,
-            payload: { date, name, amount, wallet },
+            payload: typeOfExpence,
         });
+    };
 
     return (
         <UserContext.Provider

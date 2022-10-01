@@ -1,6 +1,7 @@
 class Budget {
     constructor() {
         this.baseUrl = 'http://localhost:6001';
+        this.token = localStorage.getItem('jwtToken');
     }
     checkResponse = (res) => {
         if (res.ok) {
@@ -24,10 +25,28 @@ class Budget {
         });
     };
     addWallet = async (body) => {
-        console.log('here');
-        const token = localStorage.getItem('jwtToken');
         return await this.customFetch('api/wallet/add', body, 'POST', {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${this.token}`,
+        });
+    };
+    addIncome = async (body) => {
+        return await this.customFetch('api/wallet/add', body, 'POST', {
+            Authorization: `Bearer ${this.token}`,
+        });
+    };
+    addExpence = async (body) => {
+        return await this.customFetch('api/wallet/add', body, 'POST', {
+            Authorization: `Bearer ${this.token}`,
+        });
+    };
+    addTypeOfExpence = async (body) => {
+        return await this.customFetch('api/wallet/add', body, 'POST', {
+            Authorization: `Bearer ${this.token}`,
+        });
+    };
+    addTypeOfIncome = async (body) => {
+        return await this.customFetch('api/wallet/add', body, 'POST', {
+            Authorization: `Bearer ${this.token}`,
         });
     };
 }

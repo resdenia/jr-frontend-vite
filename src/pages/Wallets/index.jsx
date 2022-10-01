@@ -102,9 +102,14 @@ const dumpTypeExpence = [
 ];
 
 const Wallets = () => {
-    const { user, addWallet } = useContext(UserContext);
-
-    console.log(user);
+    const {
+        user,
+        addWallet,
+        addIncome,
+        addExpence,
+        addTypeOfIncome,
+        addTypeOfExpence,
+    } = useContext(UserContext);
 
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [typeOfPopup, setTypeOfPopup] = useState('addWallet');
@@ -142,7 +147,28 @@ const Wallets = () => {
 
                 return;
             case 'addIncome':
-                retrun;
+                addIncome({
+                    date: e.dateIncome,
+                    amount: e.target.amount.value,
+                });
+                return;
+            case 'addExpence':
+                addExpence({
+                    date: e.dateExpence,
+                    amount: e.target.amount.value,
+                });
+                return;
+            case 'addTypeOfExpence':
+                addTypeOfExpence({
+                    iconName: icon,
+                });
+                return;
+
+            case 'addTypeOfIncome':
+                addTypeOfIncome({
+                    iconName: icon,
+                });
+                return;
             default:
                 break;
         }
