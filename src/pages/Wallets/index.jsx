@@ -103,6 +103,7 @@ const dumpTypeExpence = [
 
 const Wallets = () => {
     const {
+        wallets,
         user,
         addWallet,
         addIncome,
@@ -113,7 +114,7 @@ const Wallets = () => {
 
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [typeOfPopup, setTypeOfPopup] = useState('addWallet');
-    const [wallets, setWallets] = useState({});
+    // const [wallets, setWallets] = useState({});
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
@@ -143,7 +144,7 @@ const Wallets = () => {
                     name: e.target.name.value,
                     amount: e.target.amount.value,
                 });
-                // setVisiblePopup(false);
+                setVisiblePopup(false);
 
                 return;
             case 'addIncome':
@@ -209,14 +210,14 @@ const Wallets = () => {
                         </div>
                         <div className={styles.wrapperSection}>
                             <Summary
-                                balance={'10,000'}
+                                balance={user ? user.balance : '0'}
                                 expence={'-3,000'}
                                 credit={'3,000'}
                                 mediana={'7,000'}
                             />
                         </div>
                         <div className={styles.wrapperSection}>
-                            <WalletsDisplay wallets={wallets} />
+                            <WalletsDisplay wallets={wallets ? wallets : []} />
                         </div>
 
                         <div className={styles.boxInfoRow}>

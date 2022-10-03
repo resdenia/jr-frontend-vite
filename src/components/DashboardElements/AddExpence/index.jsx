@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './AddExpence.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
 import DailyRange from '../DailyRange';
+import Select from '../../AdminComponents/Select';
 const AddExpence = ({ onSubmitHandler }) => {
     const datePicker = (data) => {
         console.log(data);
@@ -18,6 +19,7 @@ const AddExpence = ({ onSubmitHandler }) => {
                 }}
             >
                 <p>Choose Wallet</p>
+                <p>Choose Type</p>
 
                 <DailyRange
                     onChangeHandler={(data) => {

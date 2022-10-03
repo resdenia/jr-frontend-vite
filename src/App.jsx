@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn';
 import Signup from './pages/Signup';
 import Lobby from './pages/Lobby';
 import Wallets from './pages/Wallets';
+import Todos from './pages/Todos';
 import auth from './api/auth';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
 
                 <Route path='/dashboard' element={<Lobby />} />
                 <Route path='/dashboard/wallets' element={<Wallets />} />
+                <Route path='/dashboard/todos' element={<Todos />} />
             </Routes>
         </BrowserRouter>
     );

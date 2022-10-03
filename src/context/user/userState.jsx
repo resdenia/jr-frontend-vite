@@ -87,6 +87,7 @@ export const UserState = ({ children }) => {
                 addTypeOfIncome,
                 addTypeOfExpence,
                 loginUser,
+                wallets: state.wallets,
                 user: state.user,
                 currentUser: state.currentUser,
             }}

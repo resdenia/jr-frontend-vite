@@ -15,6 +15,8 @@ export const userReducer = (state, action) => {
             return {
                 ...state,
                 user: action.payload,
+                wallets: action.payload.wallets,
+
                 currentUser: true,
             };
         case LOGOUT:
@@ -27,7 +29,14 @@ export const userReducer = (state, action) => {
             return {
                 ...state,
                 user: action.payload,
+                wallets: action.payload.wallets,
                 currentUser: true,
+            };
+        case ADD_WALLET:
+            const arrWallets = state.wallets;
+            return {
+                ...state,
+                wallets: arrWallets.push(action.payload.wallet),
             };
         default:
             return state;
