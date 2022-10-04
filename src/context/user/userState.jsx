@@ -36,8 +36,16 @@ export const UserState = ({ children }) => {
     };
 
     const addWallet = async (wallet) => {
-        await budget.addWallet(JSON.stringify({ ...wallet }));
-        dispatch({ type: ADD_WALLET, payload: { wallet } });
+        const response = await budget
+            .addWallet(JSON.stringify({ ...wallet }))
+            .then((res) => {
+                return res.json();
+            })
+            .then((result) => {
+                console.log(result);
+                dispatch({ type: ADD_WALLET, payload: result.wallet });
+            })
+            .catch((e) => console.log(e));
     };
 
     const addIncome = async (date, amount, wallet, typeOfIncome) => {

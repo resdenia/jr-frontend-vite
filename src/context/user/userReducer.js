@@ -34,9 +34,10 @@ export const userReducer = (state, action) => {
             };
         case ADD_WALLET:
             const arrWallets = state.wallets;
+            arrWallets.push({ ...action.payload });
             return {
                 ...state,
-                wallets: arrWallets.push(action.payload.wallet),
+                wallets: arrWallets,
             };
         default:
             return state;
