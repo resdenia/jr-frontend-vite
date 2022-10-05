@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './Select.module.css';
 
 const renderOptions = (options, onSet, setVisibleSelect, setPreview) => {
-    console.log(options);
     return options.map((option, id) => {
         return (
             <div

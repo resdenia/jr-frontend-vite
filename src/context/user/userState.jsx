@@ -25,7 +25,6 @@ export const UserState = ({ children }) => {
     };
     const [state, dispatch] = useReducer(userReducer, initialState);
 
-    // const switchLang = (lang) => dispatch({ type: TOGGLE_LANG, payload: lang });
     const setCurrentUser = (currentUser, user) =>
         dispatch({
             type: CURRENT_USER,
@@ -98,6 +97,9 @@ export const UserState = ({ children }) => {
                 user: state.user,
                 currentUser: state.currentUser,
                 typeOfExpence: state.typeOfExpence,
+                typeOfIncome: state.typeOfIncome,
+                incomes: state.incomes,
+                expences: state.expences,
             }}
         >
             {children}

@@ -54,51 +54,51 @@ const dumpDataIncome = [
 const dumpDataExpence = [];
 
 const dumpTypeIncome = [
-    {
-        date: 'date',
-        icon: 'ArrowCircle2',
-        prognose: 10000,
-        actual: 6000,
-        name: 'Salary',
-    },
-    {
-        date: 'date',
-        icon: 'ArrowCircle',
-        prognose: 5000,
-        actual: 1000,
-        name: 'Freelance',
-    },
-    {
-        date: 'date',
-        icon: 'ArrowCircle',
-        prognose: 5000,
-        actual: 1000,
-        name: 'WebsiteBuilder',
-    },
+    // {
+    //     date: 'date',
+    //     icon: 'ArrowCircle2',
+    //     prognose: 10000,
+    //     actual: 6000,
+    //     name: 'Salary',
+    // },
+    // {
+    //     date: 'date',
+    //     icon: 'ArrowCircle',
+    //     prognose: 5000,
+    //     actual: 1000,
+    //     name: 'Freelance',
+    // },
+    // {
+    //     date: 'date',
+    //     icon: 'ArrowCircle',
+    //     prognose: 5000,
+    //     actual: 1000,
+    //     name: 'WebsiteBuilder',
+    // },
 ];
 
 const dumpTypeExpence = [
-    {
-        date: 'date',
-        icon: 'ArrowCircle2',
-        prognose: 10000,
-        actual: 6000,
-        name: 'Salary',
-    },
-    {
-        date: 'date',
-        icon: 'ArrowCircle',
-        prognose: 5000,
-        actual: 1000,
-        name: 'Freelance',
-    },
-    {
-        date: 'date',
-        icon: 'ArrowCircle',
-        prognose: 5000,
-        actual: 1000,
-        name: 'WebsiteBuilder',
-    },
+    // {
+    //     date: 'date',
+    //     icon: 'ArrowCircle2',
+    //     prognose: 10000,
+    //     actual: 6000,
+    //     name: 'Salary',
+    // },
+    // {
+    //     date: 'date',
+    //     icon: 'ArrowCircle',
+    //     prognose: 5000,
+    //     actual: 1000,
+    //     name: 'Freelance',
+    // },
+    // {
+    //     date: 'date',
+    //     icon: 'ArrowCircle',
+    //     prognose: 5000,
+    //     actual: 1000,
+    //     name: 'WebsiteBuilder',
+    // },
 ];
 
 const Wallets = () => {
@@ -205,7 +205,7 @@ const Wallets = () => {
                                 <TypeOfIncome incomes={dumpTypeIncome} />
                             </div>
                             <div className={styles.wrapperSection}>
-                                <TypeOfExpenses expenses={dumpTypeExpence} />
+                                <TypeOfExpenses expences={dumpTypeExpence} />
                             </div>
                         </div>
                         <div className={styles.wrapperSection}>
