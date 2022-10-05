@@ -42,7 +42,6 @@ export const UserState = ({ children }) => {
                 return res.json();
             })
             .then((result) => {
-                console.log(result);
                 dispatch({ type: ADD_WALLET, payload: result.wallet });
             })
             .catch((e) => console.log(e));
@@ -98,6 +97,7 @@ export const UserState = ({ children }) => {
                 wallets: state.wallets,
                 user: state.user,
                 currentUser: state.currentUser,
+                typeOfExpence: state.typeOfExpence,
             }}
         >
             {children}

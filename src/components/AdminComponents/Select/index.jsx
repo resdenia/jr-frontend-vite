@@ -1,15 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
+import styles from './Select.module.css';
 
-const renderOptions = (options, onSet, setVisibleSelect) => {
+const renderOptions = (options, onSet, setVisibleSelect, setPreview) => {
+    console.log(options);
     return options.map((option, id) => {
         return (
             <div
                 onClick={() => {
-                    onSet(option.value);
+                    onSet(option._id);
                     setVisibleSelect(false);
+                    setPreview(option.name);
                 }}
-                className={styles.iconWrapper}
-                key={`${key}_${id}`}
+                className={styles.elementWrapper}
+                key={`$_${option._id}`}
             >
                 {option.name}
             </div>
@@ -18,7 +21,7 @@ const renderOptions = (options, onSet, setVisibleSelect) => {
 };
 
 const Select = ({ options, onClick, label }) => {
-    const [preview, setPreview] = useState(null);
+    const [preview, setPreview] = useState('Choose option');
     const [visibleSelect, setVisibleSelect] = useState(false);
     const ref = useRef(null);
 
@@ -38,18 +41,20 @@ const Select = ({ options, onClick, label }) => {
     };
     return (
         <>
-            <div className={styles.selectIconWrapper}>
+            <div className={styles.selectLabel}>Select {label}</div>
+            <div className={styles.selectContainer} onClick={handlerOpenSelect}>
                 {preview ? <div className={styles.preview}>{preview}</div> : ''}
-            </div>
-            <div className={styles.buttonAdd} onClick={handlerOpenSelect}>
-                Select {label}
             </div>
 
             {visibleSelect ? (
                 <div className={styles.listDropDown} ref={ref}>
-                    <h3>{label}</h3>
                     <div className={styles.iconContainer}>
-                        {renderOptions(options, onClick, setVisibleSelect)}
+                        {renderOptions(
+                            options,
+                            onClick,
+                            setVisibleSelect,
+                            setPreview,
+                        )}
                     </div>
                 </div>
             ) : (

@@ -38,7 +38,6 @@ import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
 // ];
 
 const WalletsDisplay = ({ wallets }) => {
-    console.log(wallets);
     const renderBoxes = (wallets) => {
         console.log(wallets);
         return wallets.map((wallet) => {
@@ -78,7 +77,7 @@ const WalletsDisplay = ({ wallets }) => {
     return (
         <div>
             <h2>Wallets</h2>
-            {wallets.length > 0 ? (
+            {wallets ? (
                 <div className={styles.wrapperWallets}>
                     {renderBoxes(wallets)}
                 </div>

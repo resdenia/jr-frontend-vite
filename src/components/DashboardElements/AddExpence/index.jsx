@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../context/user/userContext';
 import styles from './AddExpence.module.css';
 import Input from '../../Input';
@@ -7,6 +7,15 @@ import DailyRange from '../DailyRange';
 import Select from '../../AdminComponents/Select';
 const AddExpence = ({ onSubmitHandler }) => {
     const { wallets, typeOfExpence } = useContext(UserContext);
+    const [choosedWallet, setChoosedWallet] = useState(null);
+    const [choosedType, setChoosedType] = useState(null);
+    const walletHandler = (value) => {
+        setChoosedWallet(value);
+    };
+
+    const expenceTypeHandler = (value) => {
+        setChoosedType(value);
+    };
     const datePicker = (data) => {
         console.log(data);
     };
@@ -17,13 +26,21 @@ const AddExpence = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
+                    e.target['wallet'].value = choosedWallet;
                     onSubmitHandler(e, 'addExpence');
                 }}
             >
-                <p>Choose Wallet</p>
-                <Select />
-                <Select />
-                <p>Choose Type</p>
+                {/* <p>{choosedWallet ? choosedWallet : 'Choose Wallet'}</p> */}
+                <Select
+                    options={wallets}
+                    label='Wallet'
+                    onClick={walletHandler}
+                />
+                <Select
+                    options={typeOfExpence}
+                    label='Type'
+                    onClick={expenceTypeHandler}
+                />
 
                 <DailyRange
                     onChangeHandler={(data) => {
