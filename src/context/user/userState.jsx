@@ -64,15 +64,20 @@ export const UserState = ({ children }) => {
         });
     };
 
-    const addTypeOfIncome = async ({ name, prognose, icon }) => {
-        console.log('live?');
-        const typeOfIncome = await budget.addTypeOfIncome(
-            JSON.stringify({ name, prognose, icon }),
-        );
-        dispatch({
-            type: ADD_TYPE_OF_INCOME,
-            payload: typeOfIncome,
-        });
+    const addTypeOfIncome = async ({ name, prognose, iconName }) => {
+        const typeOfIncome = await budget
+            .addTypeOfIncome(JSON.stringify({ name, prognose, iconName }))
+            .then((res) => {
+                return res.json();
+            })
+            .then((result) => {
+                console.log(result);
+                dispatch({
+                    type: ADD_TYPE_OF_INCOME,
+                    payload: result.typeOfIncome,
+                });
+            })
+            .catch((e) => console.log(e));
     };
     const addTypeOfExpence = async (name, icon, prognose) => {
         const typeOfExpence = await budget.addTypeOfExpence(

@@ -110,6 +110,8 @@ const Wallets = () => {
         addExpence,
         addTypeOfIncome,
         addTypeOfExpence,
+        typeOfIncome,
+        typeOfExpence,
     } = useContext(UserContext);
 
     const [visiblePopup, setVisiblePopup] = useState(false);
@@ -206,10 +208,17 @@ const Wallets = () => {
                         </div>
                         <div className={styles.wrapperTwoColumns}>
                             <div className={styles.wrapperSection}>
-                                <TypeOfIncome incomes={dumpTypeIncome} />
+                                <TypeOfIncome
+                                    incomes={typeOfIncome ? typeOfIncome : []}
+                                />
                             </div>
+
                             <div className={styles.wrapperSection}>
-                                <TypeOfExpenses expences={dumpTypeExpence} />
+                                <TypeOfExpenses
+                                    expences={
+                                        typeOfExpence ? typeOfExpence : []
+                                    }
+                                />
                             </div>
                         </div>
                         <div className={styles.wrapperSection}>

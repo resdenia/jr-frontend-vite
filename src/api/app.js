@@ -45,7 +45,6 @@ class Budget {
         });
     };
     addTypeOfIncome = async (body) => {
-        console.log(body);
         return await this.customFetch('api/type-income', body, 'POST', {
             Authorization: `Bearer ${this.token}`,
         });

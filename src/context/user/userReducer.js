@@ -30,6 +30,8 @@ export const userReducer = (state, action) => {
                 ...state,
                 user: action.payload,
                 wallets: action.payload.wallets,
+                typeOfExpence: action.payload.typeOfExpence,
+                typeOfIncome: action.payload.typeOfIncome,
                 currentUser: true,
             };
         case ADD_WALLET:

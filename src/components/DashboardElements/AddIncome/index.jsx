@@ -8,7 +8,7 @@ import DailyRange from '../DailyRange';
 import Select from '../../AdminComponents/Select';
 
 const AddIncome = ({ onSubmitHandler }) => {
-    const { wallets, typeOfIncome } = useContext(UserContext);
+    const { wallets, typeOfIncome, user } = useContext(UserContext);
     const [choosedWallet, setChoosedWallet] = useState(null);
     const [choosedType, setChoosedType] = useState(null);
     const walletHandler = (value) => {
