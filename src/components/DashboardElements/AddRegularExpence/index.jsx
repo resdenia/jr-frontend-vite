@@ -12,7 +12,7 @@ const AddRegularExpence = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSubmitHandler(e, 'addIncomeType');
+                    onSubmitHandler(e, 'addTypeOfExpence');
                 }}
             >
                 <Input
@@ -25,7 +25,7 @@ const AddRegularExpence = ({ onSubmitHandler }) => {
                     labelName='Prognose'
                     inputPlaceholder='Monthly, etc'
                     type='number'
-                    name='amount'
+                    name='prognose'
                 />
                 <Button
                     className='buttonSubmission'

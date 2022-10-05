@@ -64,7 +64,8 @@ export const UserState = ({ children }) => {
         });
     };
 
-    const addTypeOfIncome = async (name, prognose, icon) => {
+    const addTypeOfIncome = async ({ name, prognose, icon }) => {
+        console.log('live?');
         const typeOfIncome = await budget.addTypeOfIncome(
             JSON.stringify({ name, prognose, icon }),
         );

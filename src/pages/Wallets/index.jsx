@@ -162,12 +162,16 @@ const Wallets = () => {
             case 'addTypeOfExpence':
                 addTypeOfExpence({
                     iconName: icon,
+                    prognose: e.target.prognose.value,
+                    name: e.target.name.value,
                 });
                 return;
 
             case 'addTypeOfIncome':
                 addTypeOfIncome({
                     iconName: icon,
+                    prognose: e.target.prognose.value,
+                    name: e.target.name.value,
                 });
                 return;
             default:

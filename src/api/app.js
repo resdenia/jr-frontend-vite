@@ -40,12 +40,13 @@ class Budget {
         });
     };
     addTypeOfExpence = async (body) => {
-        return await this.customFetch('api/wallet/add', body, 'POST', {
+        return await this.customFetch('api/type-expence', body, 'POST', {
             Authorization: `Bearer ${this.token}`,
         });
     };
     addTypeOfIncome = async (body) => {
-        return await this.customFetch('api/wallet/add', body, 'POST', {
+        console.log(body);
+        return await this.customFetch('api/type-income', body, 'POST', {
             Authorization: `Bearer ${this.token}`,
         });
     };

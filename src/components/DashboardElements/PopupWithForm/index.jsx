@@ -19,28 +19,28 @@ const PopupWithForm = React.forwardRef((props, ref) => {
         case 'addIncomeType':
             return (
                 <Popup ref={ref}>
-                    <AddIncomeType />
+                    <AddIncomeType onSubmitHandler={onSubmitHandler} />
                 </Popup>
             );
 
         case 'addExpenceType':
             return (
                 <Popup ref={ref}>
-                    <AddRegularExpence />
+                    <AddRegularExpence onSubmitHandler={onSubmitHandler} />
                 </Popup>
             );
 
         case 'addIncome':
             return (
                 <Popup ref={ref}>
-                    <AddIncome />
+                    <AddIncome onSubmitHandler={onSubmitHandler} />
                 </Popup>
             );
 
         case 'addExpence':
             return (
                 <Popup ref={ref}>
-                    <AddExpence />
+                    <AddExpence onSubmitHandler={onSubmitHandler} />
                 </Popup>
             );
 
