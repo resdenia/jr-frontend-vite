@@ -17,12 +17,15 @@ const AddIncomeType = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSubmitHandler(e, 'addTypeOfIncome', iconName);
+                    const additionalData = {
+                        iconName,
+                    };
+                    onSubmitHandler(e, 'addTypeOfIncome', additionalData);
                 }}
             >
                 <SelectIcon onSet={onSetIconHandler} />
                 <Input
-                    labelName='Type of Expence'
+                    labelName='Type of Income'
                     inputPlaceholder='Salary, other'
                     type='text'
                     name='name'

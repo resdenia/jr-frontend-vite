@@ -15,7 +15,7 @@ const AddIncome = ({ onSubmitHandler }) => {
         setChoosedWallet(value);
     };
 
-    const expenceTypeHandler = (value) => {
+    const typeHandler = (value) => {
         setChoosedType(value);
     };
     const datePicker = (data) => {
@@ -28,7 +28,12 @@ const AddIncome = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSubmitHandler(e, 'addIncome');
+
+                    const additionalData = {
+                        walletId: choosedWallet,
+                        typeOfIncomeId: choosedType,
+                    };
+                    onSubmitHandler(e, 'addIncome', additionalData);
                 }}
             >
                 <Select
@@ -39,7 +44,7 @@ const AddIncome = ({ onSubmitHandler }) => {
                 <Select
                     options={typeOfIncome}
                     label='Type'
-                    onClick={expenceTypeHandler}
+                    onClick={typeHandler}
                 />
 
                 <DailyRange

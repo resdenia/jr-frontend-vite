@@ -30,12 +30,12 @@ class Budget {
         });
     };
     addIncome = async (body) => {
-        return await this.customFetch('api/wallet/add', body, 'POST', {
+        return await this.customFetch('api/income', body, 'POST', {
             Authorization: `Bearer ${this.token}`,
         });
     };
     addExpence = async (body) => {
-        return await this.customFetch('api/wallet/add', body, 'POST', {
+        return await this.customFetch('api/expence', body, 'POST', {
             Authorization: `Bearer ${this.token}`,
         });
     };

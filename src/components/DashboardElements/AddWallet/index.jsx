@@ -8,7 +8,6 @@ const AddWallet = ({ onSubmitHandler }) => {
     const [iconName, setIconName] = useState('');
 
     const onSetIconHandler = (iconName) => {
-        console.log(iconName);
         setIconName(iconName);
     };
     return (
@@ -18,7 +17,10 @@ const AddWallet = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSubmitHandler(e, 'addWallet', iconName);
+                    const additionalData = {
+                        iconName,
+                    };
+                    onSubmitHandler(e, 'addWallet', additionalData);
                 }}
             >
                 <SelectIcon onSet={onSetIconHandler} />

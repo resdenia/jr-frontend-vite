@@ -7,14 +7,14 @@ import DailyRange from '../DailyRange';
 import Select from '../../AdminComponents/Select';
 
 const AddExpence = ({ onSubmitHandler }) => {
-    const { wallets, typeOfExpence } = useContext(UserContext);
+    const { wallets, typeOfExpence, user } = useContext(UserContext);
     const [choosedWallet, setChoosedWallet] = useState(null);
     const [choosedType, setChoosedType] = useState(null);
     const walletHandler = (value) => {
         setChoosedWallet(value);
     };
 
-    const expenceTypeHandler = (value) => {
+    const typeHandler = (value) => {
         setChoosedType(value);
     };
     const datePicker = (data) => {
@@ -28,7 +28,12 @@ const AddExpence = ({ onSubmitHandler }) => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     e.target['wallet'].value = choosedWallet;
-                    onSubmitHandler(e, 'addExpence');
+                    onSubmitHandler(
+                        e,
+                        'addExpence',
+                        choosedWallet,
+                        choosedType,
+                    );
                 }}
             >
                 {/* <p>{choosedWallet ? choosedWallet : 'Choose Wallet'}</p> */}
@@ -40,7 +45,7 @@ const AddExpence = ({ onSubmitHandler }) => {
                 <Select
                     options={typeOfExpence}
                     label='Type'
-                    onClick={expenceTypeHandler}
+                    onClick={typeHandler}
                 />
 
                 <DailyRange

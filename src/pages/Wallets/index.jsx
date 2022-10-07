@@ -15,10 +15,6 @@ import TypeOfExpenses from '../../components/DashboardElements/TypeOfExpenses';
 import TypeOfIncome from '../../components/DashboardElements/TypeOfIncome';
 import styles from './Wallets.module.css';
 
-// ArrowCircle2,
-// ArrowCircle,
-// ArrangeSquare2,
-// ArrangeSquare,
 const dumpDataIncome = [
     {
         id: 'wewqewqe1',
@@ -52,54 +48,6 @@ const dumpDataIncome = [
 ];
 
 const dumpDataExpence = [];
-
-const dumpTypeIncome = [
-    // {
-    //     date: 'date',
-    //     icon: 'ArrowCircle2',
-    //     prognose: 10000,
-    //     actual: 6000,
-    //     name: 'Salary',
-    // },
-    // {
-    //     date: 'date',
-    //     icon: 'ArrowCircle',
-    //     prognose: 5000,
-    //     actual: 1000,
-    //     name: 'Freelance',
-    // },
-    // {
-    //     date: 'date',
-    //     icon: 'ArrowCircle',
-    //     prognose: 5000,
-    //     actual: 1000,
-    //     name: 'WebsiteBuilder',
-    // },
-];
-
-const dumpTypeExpence = [
-    // {
-    //     date: 'date',
-    //     icon: 'ArrowCircle2',
-    //     prognose: 10000,
-    //     actual: 6000,
-    //     name: 'Salary',
-    // },
-    // {
-    //     date: 'date',
-    //     icon: 'ArrowCircle',
-    //     prognose: 5000,
-    //     actual: 1000,
-    //     name: 'Freelance',
-    // },
-    // {
-    //     date: 'date',
-    //     icon: 'ArrowCircle',
-    //     prognose: 5000,
-    //     actual: 1000,
-    //     name: 'WebsiteBuilder',
-    // },
-];
 
 const Wallets = () => {
     const {
@@ -138,11 +86,11 @@ const Wallets = () => {
         setTypeOfPopup(type);
         setVisiblePopup(true);
     };
-    const onSubmit = async (e, type, icon = '') => {
+    const onSubmit = async (e, type, additionalData) => {
         switch (type) {
             case 'addWallet':
                 addWallet({
-                    iconName: icon,
+                    iconName: additionalData.iconName,
                     name: e.target.name.value,
                     amount: e.target.amount.value,
                 });
@@ -153,17 +101,21 @@ const Wallets = () => {
                 addIncome({
                     date: e.dateIncome,
                     amount: e.target.amount.value,
+                    walletId: additionalData.walletId,
+                    typeOfIncomeId: additionalData.typeOfIncomeId,
                 });
                 return;
             case 'addExpence':
                 addExpence({
                     date: e.dateExpence,
                     amount: e.target.amount.value,
+                    walletId: additionalData.walletId,
+                    typeOfExpence: additionalData.typeOfExpence,
                 });
                 return;
             case 'addTypeOfExpence':
                 addTypeOfExpence({
-                    iconName: icon,
+                    iconName: additionalData.iconName,
                     prognose: e.target.prognose.value,
                     name: e.target.name.value,
                 });
@@ -171,7 +123,7 @@ const Wallets = () => {
 
             case 'addTypeOfIncome':
                 addTypeOfIncome({
-                    iconName: icon,
+                    iconName: additionalData.iconName,
                     prognose: e.target.prognose.value,
                     name: e.target.name.value,
                 });

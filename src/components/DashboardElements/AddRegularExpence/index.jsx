@@ -17,7 +17,11 @@ const AddRegularExpence = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSubmitHandler(e, 'addTypeOfExpence', iconName);
+
+                    const additionalData = {
+                        iconName,
+                    };
+                    onSubmitHandler(e, 'addTypeOfExpence', additionalData);
                 }}
             >
                 <SelectIcon onSet={onSetIconHandler} />
