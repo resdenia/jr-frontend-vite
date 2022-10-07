@@ -48,6 +48,13 @@ export const userReducer = (state, action) => {
                 ...state,
                 typeOfIncome: arrTypesIncome,
             };
+        case ADD_TYPE_OF_EXPENCE:
+            const arrTypesExpence = state.typeOfExpence;
+            arrTypesExpence.push({ ...action.payload });
+            return {
+                ...state,
+                typeOfExpence: arrTypesExpence,
+            };
         default:
             return state;
     }

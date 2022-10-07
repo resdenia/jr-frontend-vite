@@ -80,13 +80,18 @@ export const UserState = ({ children }) => {
             .catch((e) => console.log(e));
     };
     const addTypeOfExpence = async (name, icon, prognose) => {
-        const typeOfExpence = await budget.addTypeOfExpence(
-            JSON.stringify({ name, icon, prognose }),
-        );
-        dispatch({
-            type: ADD_TYPE_OF_EXPENCE,
-            payload: typeOfExpence,
-        });
+        const typeOfExpence = await budget
+            .addTypeOfExpence(JSON.stringify({ name, icon, prognose }))
+            .then((res) => {
+                return res.json();
+            })
+            .then((result) => {
+                dispatch({
+                    type: ADD_TYPE_OF_EXPENCE,
+                    payload: result.typeOfExpence,
+                });
+            })
+            .catch((err) => console.log(err));
     };
 
     return (

@@ -22,7 +22,7 @@ const AddRegularExpence = ({ onSubmitHandler }) => {
             >
                 <SelectIcon onSet={onSetIconHandler} />
                 <Input
-                    labelName='Type of Income'
+                    labelName='Type of Expence'
                     inputPlaceholder='Salary, other'
                     type='text'
                     name='name'
