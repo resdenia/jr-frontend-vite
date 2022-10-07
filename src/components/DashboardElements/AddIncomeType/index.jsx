@@ -8,7 +8,6 @@ const AddIncomeType = ({ onSubmitHandler }) => {
     const [iconName, setIconName] = useState('');
 
     const onSetIconHandler = (iconName) => {
-        console.log(iconName);
         setIconName(iconName);
     };
     return (

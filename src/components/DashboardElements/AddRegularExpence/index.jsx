@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AddRegularExpence.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
 import SelectIcon from '../../AdminComponents/SelectIcon';
 
 const AddRegularExpence = ({ onSubmitHandler }) => {
+    const [iconName, setIconName] = useState('');
+
+    const onSetIconHandler = (iconName) => {
+        setIconName(iconName);
+    };
     return (
         <>
             <h3>Add Regular Expence</h3>
@@ -12,9 +17,10 @@ const AddRegularExpence = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    onSubmitHandler(e, 'addTypeOfExpence');
+                    onSubmitHandler(e, 'addTypeOfExpence', iconName);
                 }}
             >
+                <SelectIcon onSet={onSetIconHandler} />
                 <Input
                     labelName='Type of Income'
                     inputPlaceholder='Salary, other'
