@@ -79,9 +79,9 @@ export const UserState = ({ children }) => {
             })
             .catch((e) => console.log(e));
     };
-    const addTypeOfExpence = async (name, icon, prognose) => {
+    const addTypeOfExpence = async ({ name, iconName, prognose }) => {
         const typeOfExpence = await budget
-            .addTypeOfExpence(JSON.stringify({ name, icon, prognose }))
+            .addTypeOfExpence(JSON.stringify({ name, iconName, prognose }))
             .then((res) => {
                 return res.json();
             })
