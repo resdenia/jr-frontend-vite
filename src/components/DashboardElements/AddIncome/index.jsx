@@ -4,7 +4,7 @@ import { UserContext } from '../../../context/user/userContext';
 import styles from './AddIncome.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
-import DailyRange from '../DailyRange';
+import InputDate from '../InputDate';
 import Select from '../../AdminComponents/Select';
 
 const AddIncome = ({ onSubmitHandler }) => {
@@ -47,7 +47,7 @@ const AddIncome = ({ onSubmitHandler }) => {
                     onClick={typeHandler}
                 />
 
-                <DailyRange
+                <InputDate
                     onChangeHandler={(data) => {
                         datePicker(data);
                     }}
