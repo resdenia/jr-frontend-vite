@@ -3,10 +3,11 @@ import styles from './ListOfTriggers.module.css';
 import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
 
 const ListOfTriggers = ({ type, data }) => {
+    console.log(data);
     return (
         <div>
             <h2>{type}</h2>
-            {data.length > 0 &&
+            {/* {data.length > 0 &&
                 data.map((item) => {
                     const IconDisplay = IconArrow[item.icon];
 
@@ -32,7 +33,7 @@ const ListOfTriggers = ({ type, data }) => {
                             <div className={styles.amount}>{item.amount}</div>
                         </div>
                     );
-                })}
+                })} */}
         </div>
     );
 };

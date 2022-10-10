@@ -199,13 +199,13 @@ const Wallets = () => {
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
                                     type='income'
-                                    data={dumpDataIncome}
+                                    data={user && user.incomes}
                                 />
                             </div>
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
                                     type='expnese'
-                                    data={dumpDataExpence}
+                                    data={user && user.expences}
                                 />
                             </div>
                         </div>
