@@ -30,6 +30,7 @@ export const UserState = ({ children }) => {
             type: CURRENT_USER,
             payload: { currentUser: currentUser, user: user },
         });
+
     const loginUser = (user) => {
         dispatch({ type: CURRENT_USER, payload: user });
     };
@@ -46,17 +47,17 @@ export const UserState = ({ children }) => {
             .catch((e) => console.log(e));
     };
 
-    const addIncome = async (date, amount, wallet, typeOfIncome) => {
+    const addIncome = async ({ date, amount, walletId, typeOfIncomeId }) => {
         const income = await budget.addIncome(
-            JSON.stringify({ date, amount, wallet, typeOfIncome }),
+            JSON.stringify({ date, amount, walletId, typeOfIncomeId }),
         );
 
         dispatch({ type: ADD_INCOME, payload: income });
     };
 
-    const addExpence = async (date, typeOfExpence, amount, wallet) => {
+    const addExpence = async ({ date, typeOfExpenceId, amount, walletId }) => {
         const expence = await budget.addExpence(
-            JSON.stringify({ date, amount, wallet, typeOfExpence }),
+            JSON.stringify({ date, amount, walletId, typeOfExpenceId }),
         );
         dispatch({
             type: ADD_EXPENCE,

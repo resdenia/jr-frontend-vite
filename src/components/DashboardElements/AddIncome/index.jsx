@@ -10,6 +10,7 @@ import Select from '../../AdminComponents/Select';
 const AddIncome = ({ onSubmitHandler }) => {
     const { wallets, typeOfIncome, user } = useContext(UserContext);
     const [choosedWallet, setChoosedWallet] = useState(null);
+    const [dateInput, setDateInput] = useState(null);
     const [choosedType, setChoosedType] = useState(null);
     const walletHandler = (value) => {
         setChoosedWallet(value);
@@ -20,6 +21,7 @@ const AddIncome = ({ onSubmitHandler }) => {
     };
     const datePicker = (data) => {
         console.log(data);
+        setDateInput(data);
     };
     return (
         <>
@@ -32,6 +34,7 @@ const AddIncome = ({ onSubmitHandler }) => {
                     const additionalData = {
                         walletId: choosedWallet,
                         typeOfIncomeId: choosedType,
+                        date: dateInput,
                     };
                     onSubmitHandler(e, 'addIncome', additionalData);
                 }}

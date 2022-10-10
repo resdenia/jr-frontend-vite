@@ -103,6 +103,7 @@ const Wallets = () => {
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfIncomeId: additionalData.typeOfIncomeId,
+                    date: additionalData.date,
                 });
                 return;
             case 'addExpence':
@@ -111,6 +112,7 @@ const Wallets = () => {
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfExpence: additionalData.typeOfExpence,
+                    date: additionalData.date,
                 });
                 return;
             case 'addTypeOfExpence':

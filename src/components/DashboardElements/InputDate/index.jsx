@@ -72,7 +72,7 @@ const InputDate = ({ onChangeHandler }) => {
                                     onChangeHandler(data);
                                 }}
                                 value={value}
-                                returnValue={'range'}
+                                // returnValue={'range'}
                                 selectRange={false}
                             />
                         </>

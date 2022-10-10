@@ -3,12 +3,13 @@ import { UserContext } from '../../../context/user/userContext';
 import styles from './AddExpence.module.css';
 import Input from '../../Input';
 import Button from '../../AdminComponents/Button';
-import DailyRange from '../DailyRange';
+import InputDate from '../InputDate';
 import Select from '../../AdminComponents/Select';
 
 const AddExpence = ({ onSubmitHandler }) => {
     const { wallets, typeOfExpence, user } = useContext(UserContext);
     const [choosedWallet, setChoosedWallet] = useState(null);
+    const [dateInput, setDateInput] = useState(null);
     const [choosedType, setChoosedType] = useState(null);
     const walletHandler = (value) => {
         setChoosedWallet(value);
@@ -19,6 +20,7 @@ const AddExpence = ({ onSubmitHandler }) => {
     };
     const datePicker = (data) => {
         console.log(data);
+        setDateInput(data);
     };
     return (
         <>
@@ -27,13 +29,14 @@ const AddExpence = ({ onSubmitHandler }) => {
                 className={styles.formSubmission}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    e.target['wallet'].value = choosedWallet;
-                    onSubmitHandler(
-                        e,
-                        'addExpence',
-                        choosedWallet,
-                        choosedType,
-                    );
+
+                    const additionalData = {
+                        walletId: choosedWallet,
+                        typeOfExpenceId: choosedType,
+                        date: dateInput,
+                    };
+
+                    onSubmitHandler(e, 'addExpence', additionalData);
                 }}
             >
                 {/* <p>{choosedWallet ? choosedWallet : 'Choose Wallet'}</p> */}
@@ -48,7 +51,7 @@ const AddExpence = ({ onSubmitHandler }) => {
                     onClick={typeHandler}
                 />
 
-                <DailyRange
+                <InputDate
                     onChangeHandler={(data) => {
                         datePicker(data);
                     }}
