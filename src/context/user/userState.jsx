@@ -42,7 +42,7 @@ export const UserState = ({ children }) => {
                 return res.json();
             })
             .then((result) => {
-                dispatch({ type: ADD_WALLET, payload: result.wallet });
+                dispatch({ type: ADD_WALLET, payload: result });
             })
             .catch((e) => console.log(e));
     };

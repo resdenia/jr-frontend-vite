@@ -51,6 +51,7 @@ const dumpDataExpence = [];
 
 const Wallets = () => {
     const {
+        balance,
         wallets,
         user,
         addWallet,
