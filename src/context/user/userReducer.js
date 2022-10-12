@@ -17,7 +17,6 @@ export const userReducer = (state, action) => {
                 user: action.payload,
                 wallets: action.payload.wallets,
                 incomes: [...action.payload.incomes],
-
                 expences: [...action.payload.expences],
                 currentUser: true,
             };
@@ -28,6 +27,34 @@ export const userReducer = (state, action) => {
                 currentUser: false,
             };
         case CURRENT_USER:
+            if (
+                action.payload.typeOfIncome &&
+                action.payload.typeOfIncome.length > 0
+            ) {
+                action.payload.typeOfIncome.forEach((typeIncome) => {
+                    typeIncome.actual = 0;
+                    if (typeIncome.income && typeIncome.income.length > 0) {
+                        typeIncome.income.forEach((income) => {
+                            typeIncome.actual =
+                                typeIncome.actual + income.amount;
+                        });
+                    }
+                });
+            }
+            if (
+                action.payload.typeOfExpence &&
+                action.payload.typeOfExpence.length > 0
+            ) {
+                action.payload.typeOfExpence.forEach((typeexpence) => {
+                    typeexpence.actual = 0;
+                    if (typeexpence.expence && typeexpence.expence.length > 0) {
+                        typeexpence.expence.forEach((expence) => {
+                            typeexpence.actual =
+                                typeexpence.actual + expence.amount;
+                        });
+                    }
+                });
+            }
             return {
                 ...state,
                 user: action.payload,

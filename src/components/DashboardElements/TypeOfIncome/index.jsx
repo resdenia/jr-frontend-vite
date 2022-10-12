@@ -4,6 +4,7 @@ import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
 import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
 
 const TypeOfIncome = ({ incomes }) => {
+    console.log(incomes);
     return (
         <div>
             <h3>Type Of Income</h3>
