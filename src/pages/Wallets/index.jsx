@@ -52,6 +52,8 @@ const dumpDataExpence = [];
 const Wallets = () => {
     const {
         balance,
+        incomes,
+        expences,
         wallets,
         user,
         addWallet,
@@ -199,13 +201,13 @@ const Wallets = () => {
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
                                     type='income'
-                                    data={user && user.incomes}
+                                    data={incomes ? incomes : []}
                                 />
                             </div>
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
                                     type='expnese'
-                                    data={user && user.expences}
+                                    data={expences ? expences : []}
                                 />
                             </div>
                         </div>

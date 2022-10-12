@@ -16,7 +16,9 @@ export const userReducer = (state, action) => {
                 ...state,
                 user: action.payload,
                 wallets: action.payload.wallets,
+                incomes: [...action.payload.incomes],
 
+                expences: [...action.payload.expences],
                 currentUser: true,
             };
         case LOGOUT:
