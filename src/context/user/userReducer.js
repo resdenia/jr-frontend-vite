@@ -27,6 +27,9 @@ export const userReducer = (state, action) => {
                 currentUser: false,
             };
         case CURRENT_USER:
+            if (!action.payload) {
+                return state;
+            }
             if (
                 action.payload.typeOfIncome &&
                 action.payload.typeOfIncome.length > 0
