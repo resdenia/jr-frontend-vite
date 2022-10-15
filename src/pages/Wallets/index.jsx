@@ -9,45 +9,11 @@ import BoxDisplay from '../../components/DashboardElements/BoxDisplay';
 
 import ListOfTriggers from '../../components/DashboardElements/ListOfTriggers';
 import WalletsDisplay from '../../components/DashboardElements/WalletsDisplay';
-import ExpenceDisplay from '../../components/DashboardElements/ExpenceDisplay';
+// import ExpenceDisplay from '../../components/DashboardElements/ExpenceDisplay';
 import PopupWithForm from '../../components/DashboardElements/PopupWithForm';
 import TypeOfExpenses from '../../components/DashboardElements/TypeOfExpenses';
 import TypeOfIncome from '../../components/DashboardElements/TypeOfIncome';
 import styles from './Wallets.module.css';
-
-const dumpDataIncome = [
-    {
-        id: 'wewqewqe1',
-        icon: 'ArrowCircle2',
-        amount: 220,
-        type: 'Freelance',
-        date: 'date',
-    },
-    {
-        id: 'wewqewqe2',
-        icon: 'ArrowCircle',
-        amount: 120,
-        type: 'Sold Card',
-        date: 'date',
-    },
-    {
-        id: 'wewqewqe3',
-        icon: 'ArrangeSquare2',
-        amount: 220,
-        type: 'Salary',
-        date: 'date',
-    },
-
-    {
-        id: 'wewqewqe4',
-        icon: 'ArrangeSquare2',
-        amount: 210,
-        type: 'Freelance',
-        date: 'date',
-    },
-];
-
-const dumpDataExpence = [];
 
 const Wallets = () => {
     const {
@@ -206,7 +172,7 @@ const Wallets = () => {
                             </div>
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
-                                    type='expnese'
+                                    type='expnece'
                                     data={expences ? expences : []}
                                 />
                             </div>
