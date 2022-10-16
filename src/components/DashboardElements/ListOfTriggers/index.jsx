@@ -9,7 +9,7 @@ const ListOfTriggers = ({ type, data }) => {
             <h2>{type}</h2>
             {data.length > 0 &&
                 data.map((item) => {
-                    // const IconDisplay = IconArrow[item[`typeOf${type}`].icon];
+                    const IconDisplay = IconArrow[item[`typeOf${type}Icon`]];
 
                     return (
                         <div
@@ -18,7 +18,7 @@ const ListOfTriggers = ({ type, data }) => {
                         >
                             <div className={styles.infoItem}>
                                 <div className={styles.iconWrapper}>
-                                    {/* <IconDisplay /> */}
+                                    <IconDisplay />
                                 </div>
                                 <div className={styles.metaItem}>
                                     <div className={styles.dateItem}>
@@ -26,7 +26,7 @@ const ListOfTriggers = ({ type, data }) => {
                                     </div>
 
                                     <div className={styles.typeItem}>
-                                        {item.type}
+                                        {item[`typeOf${type}Name`]}
                                     </div>
                                 </div>
                             </div>
