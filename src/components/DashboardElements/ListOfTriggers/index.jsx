@@ -9,12 +9,17 @@ const ListOfTriggers = ({ type, data }) => {
             <h2>{type}</h2>
             {data.length > 0 &&
                 data.map((item) => {
+                    // const IconDisplay = IconArrow[item[`typeOf${type}`].icon];
+
                     return (
                         <div
                             className={styles.itemWrapper}
                             key={`${item.date}_${item.amount}_${item.type}`}
                         >
                             <div className={styles.infoItem}>
+                                <div className={styles.iconWrapper}>
+                                    {/* <IconDisplay /> */}
+                                </div>
                                 <div className={styles.metaItem}>
                                     <div className={styles.dateItem}>
                                         {item.date}

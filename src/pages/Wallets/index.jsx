@@ -166,13 +166,13 @@ const Wallets = () => {
                         <div className={styles.wrapperTwoColumns}>
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
-                                    type='income'
+                                    type='Income'
                                     data={incomes ? incomes : []}
                                 />
                             </div>
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
-                                    type='expnece'
+                                    type='Expnece'
                                     data={expences ? expences : []}
                                 />
                             </div>
