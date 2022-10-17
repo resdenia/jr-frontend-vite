@@ -17,7 +17,7 @@ const ListOfTriggers = ({ type, data }) => {
                             key={`${item.date}_${item.amount}_${type}`}
                         >
                             <div className={styles.infoItem}>
-                                <div className={styles.iconWrapper}>
+                                <div className={styles[`iconWrapper_${type}`]}>
                                     <IconDisplay />
                                 </div>
                                 <div className={styles.metaItem}>

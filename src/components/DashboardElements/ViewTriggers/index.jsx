@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Summary.module.css';
 import {
     LineChart,
@@ -8,6 +8,7 @@ import {
     Legend,
     ResponsiveContainer,
 } from 'recharts';
+import { convertDataTrigger } from '../../../utils/converts';
 
 const Summary = ({ incomes, expences }) => {
     return (

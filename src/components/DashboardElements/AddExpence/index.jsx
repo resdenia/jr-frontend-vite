@@ -66,7 +66,7 @@ const AddExpence = ({ onSubmitHandler }) => {
                 <Button
                     className='buttonSubmission'
                     type='submit'
-                    content='Add Income Type'
+                    content='Add Expence Type'
                 />
             </form>
         </>
