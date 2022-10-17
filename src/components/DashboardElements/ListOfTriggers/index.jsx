@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './ListOfTriggers.module.css';
 import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
+import moment from 'moment';
 
 const ListOfTriggers = ({ type, data }) => {
-    console.log(data);
     return (
         <div>
             <h2>{type}</h2>
@@ -22,7 +22,7 @@ const ListOfTriggers = ({ type, data }) => {
                                 </div>
                                 <div className={styles.metaItem}>
                                     <div className={styles.dateItem}>
-                                        {item.date}
+                                        {moment(item.date).format('MM/DD/YYYY')}
                                     </div>
 
                                     <div className={styles.typeItem}>
