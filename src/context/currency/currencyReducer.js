@@ -1,3 +1,0 @@
-type IInsurance {
-	id:number;
-}

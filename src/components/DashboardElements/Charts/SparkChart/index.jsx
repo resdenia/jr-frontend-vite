@@ -8,7 +8,7 @@ export default function Line() {
         series: 1,
         dataType: 'time',
     });
-
+    console.log(data);
     const primaryAxis = React.useMemo(
         () => ({
             getValue: (datum) => datum.primary,

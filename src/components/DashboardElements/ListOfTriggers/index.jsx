@@ -14,7 +14,7 @@ const ListOfTriggers = ({ type, data }) => {
                     return (
                         <div
                             className={styles.itemWrapper}
-                            key={`${item.date}_${item.amount}_${item.type}`}
+                            key={`${item.date}_${item.amount}_${type}`}
                         >
                             <div className={styles.infoItem}>
                                 <div className={styles.iconWrapper}>

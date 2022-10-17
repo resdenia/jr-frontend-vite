@@ -80,7 +80,7 @@ const Wallets = () => {
                     date: e.dateExpence,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
-                    typeOfExpence: additionalData.typeOfExpence,
+                    typeOfExpenceId: additionalData.typeOfExpenceId,
                     date: additionalData.date,
                 });
                 return;
@@ -172,7 +172,7 @@ const Wallets = () => {
                             </div>
                             <div className={styles.wrapperSection}>
                                 <ListOfTriggers
-                                    type='Expnece'
+                                    type='Expence'
                                     data={expences ? expences : []}
                                 />
                             </div>

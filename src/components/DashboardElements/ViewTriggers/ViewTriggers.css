@@ -1,0 +1,14 @@
+.wrapperInfo {
+    display: flex;
+    justify-content: space-between;
+}
+.balance {
+    color: #50d1b2;
+}
+
+.expence {
+    color: #e23738;
+}
+.credit {
+    color: #e23738;
+}
