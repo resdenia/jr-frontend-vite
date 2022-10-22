@@ -24,7 +24,7 @@ const TypeOfIncome = ({ incomes }) => {
                                         </div>
                                         <div className={styles.metaItem}>
                                             <div className={styles.dateItem}>
-                                                LastUpdaed {item.date}
+                                                {item.lastDateUpdate}
                                             </div>
 
                                             <div className={styles.typeItem}>
