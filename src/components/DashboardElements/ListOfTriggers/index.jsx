@@ -22,7 +22,9 @@ const ListOfTriggers = ({ type, data }) => {
                                 </div>
                                 <div className={styles.metaItem}>
                                     <div className={styles.dateItem}>
-                                        {moment(item.date).format('MM/DD/YYYY')}
+                                        {moment(item.date).format(
+                                            'DD MMMM YYYY',
+                                        )}
                                     </div>
 
                                     <div className={styles.typeItem}>
