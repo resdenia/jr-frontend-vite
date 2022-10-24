@@ -1,6 +1,7 @@
 .rangeContainer {
     width: 100%;
     text-align: right;
+    margin-top: 20px;
 }
 .dateWrapp {
     font-weight: 400;
