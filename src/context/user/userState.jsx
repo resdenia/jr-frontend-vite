@@ -25,6 +25,10 @@ export const UserState = ({ children }) => {
     };
     const [state, dispatch] = useReducer(userReducer, initialState);
 
+    const sortDate = (startDate, endDate) => {
+        dispatch;
+    };
+
     const setCurrentUser = (currentUser, user) =>
         dispatch({
             type: CURRENT_USER,

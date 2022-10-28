@@ -9,7 +9,7 @@ import BoxDisplay from '../../components/DashboardElements/BoxDisplay';
 
 import ListOfTriggers from '../../components/DashboardElements/ListOfTriggers';
 import WalletsDisplay from '../../components/DashboardElements/WalletsDisplay';
-// import ExpenceDisplay from '../../components/DashboardElements/ExpenceDisplay';
+import ViewTriggers from '../../components/DashboardElements/ViewTriggers';
 import PopupWithForm from '../../components/DashboardElements/PopupWithForm';
 import TypeOfExpenses from '../../components/DashboardElements/TypeOfExpenses';
 import TypeOfIncome from '../../components/DashboardElements/TypeOfIncome';
@@ -151,6 +151,9 @@ const Wallets = () => {
                                 credit={'3,000'}
                                 mediana={'7,000'}
                             />
+                        </div>
+                        <div className={styles.wrapperSection}>
+                            <ViewTriggers />
                         </div>
                         <div className={styles.wrapperSection}>
                             <WalletsDisplay wallets={wallets ? wallets : []} />
