@@ -14,7 +14,21 @@ import { convertDataTrigger } from '../../../utils/converts';
 
 const ViewTriggers = ({ incomes, expences }) => {
     const [displayData, setDisplayData] = useState([]);
+    // Date.prototype.addDays = function(days) {
+    // 	var date = new Date(this.valueOf());
+    // 	date.setDate(date.getDate() + days);
+    // 	return date;
+    // }
 
+    // function getDates(startDate, stopDate) {
+    // 	var dateArray = new Array();
+    // 	var currentDate = startDate;
+    // 	while (currentDate <= stopDate) {
+    // 		dateArray.push(new Date (currentDate));
+    // 		currentDate = currentDate.addDays(1);
+    // 	}
+    // 	return dateArray;
+    // }
     useEffect(() => {
         setDisplayData([...convertDataTrigger(incomes, expences)]);
         console.log(displayData);
