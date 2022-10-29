@@ -22,11 +22,15 @@ export const UserState = ({ children }) => {
         typeOfIncome: [],
         expences: [],
         incomes: [],
+        firstDate:
+            localStorage.getItem('firstDate') ||
+            new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+        lastDate: localStorage.getItem('lastDate') || new Date().toISOString(),
     };
     const [state, dispatch] = useReducer(userReducer, initialState);
 
     const sortDate = (startDate, endDate) => {
-        dispatch;
+        dispatch({});
     };
 
     const setCurrentUser = (currentUser, user) =>
@@ -109,6 +113,8 @@ export const UserState = ({ children }) => {
                 addTypeOfIncome,
                 addTypeOfExpence,
                 loginUser,
+                firstDate: state.firstDate,
+                lastDate: state.lastDate,
                 wallets: state.wallets,
                 user: state.user,
                 currentUser: state.currentUser,

@@ -6,9 +6,20 @@ import 'react-calendar/dist/Calendar.css';
 import styles from './DailyRange.module.css';
 
 const DailyRange = ({ onChangeHandler }) => {
+    const [firstDay, setFirstDay] = useState(new Date());
     const [value, onChange] = useState(new Date());
     const [visibleCalendar, setVisibleCalendar] = useState(false);
     const ref = useRef(null);
+    const now = new Date();
+
+    useEffect(() => {
+        const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
+        setFirstDay(firstDay);
+
+        onChange([firstDay, new Date()]);
+        localStorage.setItem('firstDaySort', firstDay);
+        localStorage.setItem('lastDay', new Date());
+    }, []);
 
     const displayProperDateFormat = () => {
         if (value.length && value.length > 1) {

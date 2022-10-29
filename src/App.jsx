@@ -10,15 +10,15 @@ import Todos from './pages/Todos';
 import auth from './api/auth';
 
 function App() {
-    const { setCurrentUser } = useContext(UserContext);
+    const { setCurrentUser, lastDate, firstDate } = useContext(UserContext);
 
     // const [currentUser, setCurrentUser] = useState()
 
     useEffect(() => {
         const jwt = localStorage.getItem('jwttoken');
-
+        console.log(jwt);
         if (jwt) {
-            auth.getCurrentUser(JSON.parse(jwt))
+            auth.getCurrentUser(JSON.parse(jwt), { lastDate, firstDate })
                 .then((result) => {
                     setCurrentUser(result);
                 })
