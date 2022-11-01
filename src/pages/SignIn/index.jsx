@@ -8,7 +8,8 @@ import auth from '../../api/auth';
 
 const SignIn = () => {
     const navigate = useNavigate();
-    const { loginUser, setCurrentUser } = useContext(UserContext);
+    const { loginUser, setCurrentUser, lastDate, firstDate } =
+        useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorStatus, setErrorStatus] = useState(false);
@@ -22,6 +23,8 @@ const SignIn = () => {
                 JSON.stringify({
                     email,
                     password,
+                    lastDate,
+                    firstDate,
                 }),
             )
             .then((res) => res.json())

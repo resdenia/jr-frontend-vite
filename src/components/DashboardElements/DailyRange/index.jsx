@@ -17,8 +17,8 @@ const DailyRange = ({ onChangeHandler }) => {
         setFirstDay(firstDay);
 
         onChange([firstDay, new Date()]);
-        localStorage.setItem('firstDaySort', firstDay);
-        localStorage.setItem('lastDay', new Date());
+        localStorage.setItem('firstDate', firstDay);
+        localStorage.setItem('lastDate', new Date());
     }, []);
 
     const displayProperDateFormat = () => {
