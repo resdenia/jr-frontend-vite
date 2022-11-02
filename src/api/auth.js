@@ -25,8 +25,9 @@ class Auth {
         });
     };
 
-    getUser = async (token) => {
-        return await this.customFetch('api/auth/currentUser', token, 'POST', {
+    getUser = async (token, body) => {
+        console.log(body);
+        return await this.customFetch('api/auth/currentUser', body, 'POST', {
             Authorization: `Bearer ${JSON.parse(token).token}`,
         });
     };

@@ -10,21 +10,21 @@ import Todos from './pages/Todos';
 import auth from './api/auth';
 
 function App() {
-    const { setCurrentUser, lastDate, firstDate } = useContext(UserContext);
+    // const { setCurrentUser, lastDate, firstDate } = useContext(UserContext);
 
-    // const [currentUser, setCurrentUser] = useState()
+    // // const [currentUser, setCurrentUser] = useState()
 
-    useEffect(() => {
-        const jwt = localStorage.getItem('jwttoken');
-        console.log(jwt);
-        if (jwt) {
-            auth.getCurrentUser(JSON.parse(jwt), { lastDate, firstDate })
-                .then((result) => {
-                    setCurrentUser(result);
-                })
-                .catch((err) => console.log());
-        }
-    }, []);
+    // useEffect(() => {
+    //     const jwt = localStorage.getItem('jwtToken');
+    //     const dateData = JSON.stringify({ lastDate, firstDate });
+    //     if (jwt) {
+    //         auth.getUser(jwt, dateData)
+    //             .then((result) => {
+    //                 setCurrentUser(result);
+    //             })
+    //             .catch((err) => console.log());
+    //     }
+    // }, []);
 
     return (
         <BrowserRouter>

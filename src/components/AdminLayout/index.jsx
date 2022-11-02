@@ -14,9 +14,12 @@ const AdminLayout = ({ children }) => {
 
     useEffect(() => {
         const token = localStorage.getItem('jwtToken');
+        const dateData = JSON.stringify({ lastDate, firstDate });
+
         if (token) {
             if (!currentUser) {
-                auth.getUser(JSON.stringify({ token: token }))
+                const dateData = JSON.stringify({ lastDate, firstDate });
+                auth.getUser(JSON.stringify({ token: token }, dateData))
                     .then((res) => {
                         if (res.ok) {
                             // console.log(res.json());
