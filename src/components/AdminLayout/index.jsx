@@ -9,7 +9,8 @@ import styles from './AdminLayout.module.css';
 import auth from '../../api/auth';
 
 const AdminLayout = ({ children }) => {
-    const { currentUser, setCurrentUser, loginUser } = useContext(UserContext);
+    const { currentUser, setCurrentUser, loginUser, lastDate, firstDate } =
+        useContext(UserContext);
     const navigate = useNavigate();
 
     useEffect(() => {
