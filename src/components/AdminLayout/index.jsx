@@ -18,8 +18,8 @@ const AdminLayout = ({ children }) => {
 
         if (token) {
             if (!currentUser) {
-                const dateData = JSON.stringify({ lastDate, firstDate });
-                auth.getUser(JSON.stringify({ token: token }, dateData))
+                const dateData = { lastDate, firstDate };
+                auth.getUser(token, dateData)
                     .then((res) => {
                         if (res.ok) {
                             // console.log(res.json());
