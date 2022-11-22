@@ -15,6 +15,7 @@
         "react-charts": "^3.0.0-beta.48",
         "react-date-picker": "^8.4.0",
         "react-dom": "^18.2.0",
+        "react-query": "^3.39.2",
         "react-resizable": "^3.0.4",
         "react-router-dom": "^6.4.1",
         "recharts": "^2.1.14"
