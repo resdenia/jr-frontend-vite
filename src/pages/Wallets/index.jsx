@@ -34,7 +34,6 @@ const Wallets = () => {
 
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [typeOfPopup, setTypeOfPopup] = useState('addWallet');
-    // const [wallets, setWallets] = useState({});
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
