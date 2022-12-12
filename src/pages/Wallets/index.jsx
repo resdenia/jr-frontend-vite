@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext, memo } from 'react';
 import { UserContext } from '../../context/user/userContext';
 import { useQuery } from 'react-query';
 
