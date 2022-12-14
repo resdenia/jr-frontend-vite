@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useContext, memo } from 'react';
 import { UserContext } from '../../context/user/userContext';
 import { useQuery } from 'react-query';
 
+import { useIncome } from '../../hooks/incomeHook/incomeHook';
+import { useExpence } from '../../hooks/expenceHook/expenceHook';
 import AdminLayout from '../../components/AdminLayout';
 import Controllers from '../../components/DashboardElements/Controllers';
 import DailyRange from '../../components/DashboardElements/DailyRange';
@@ -19,8 +21,6 @@ import styles from './Wallets.module.css';
 const Wallets = () => {
     const {
         balance,
-        incomes,
-        expences,
         wallets,
         user,
         addWallet,
@@ -32,6 +32,8 @@ const Wallets = () => {
         typeOfExpence,
     } = useContext(UserContext);
 
+    const incomes = useIncome();
+    const expences = useExpence();
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [typeOfPopup, setTypeOfPopup] = useState('addWallet');
     const ref = useRef(null);
@@ -72,7 +74,7 @@ const Wallets = () => {
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfIncomeId: additionalData.typeOfIncomeId,
-                    date: additionalData.date,
+                    // date: additionalData.date,
                 });
                 return;
             case 'addExpence':
@@ -81,7 +83,7 @@ const Wallets = () => {
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfExpenceId: additionalData.typeOfExpenceId,
-                    date: additionalData.date,
+                    // date: additionalData.date,
                 });
                 return;
             case 'addTypeOfExpence':
@@ -103,6 +105,7 @@ const Wallets = () => {
                 break;
         }
     };
+
     return (
         <>
             <AdminLayout>

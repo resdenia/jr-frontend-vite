@@ -1,6 +1,7 @@
 class Auth {
     constructor() {
         this.baseUrl = 'http://localhost:6001';
+        this.token = localStorage.getItem('jwtToken');
     }
 
     checkResponse = (res) => {
@@ -25,10 +26,9 @@ class Auth {
         });
     };
 
-    getUser = async (token, body) => {
-        console.log(body);
+    getUser = async (body) => {
         return await this.customFetch('api/auth/currentUser', body, 'POST', {
-            Authorization: `Bearer ${JSON.parse(token).token}`,
+            Authorization: `Bearer ${this.token}`,
         });
     };
     login = async (body) => {

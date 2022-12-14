@@ -7,6 +7,7 @@ class Budget {
         if (res.ok) {
             return res.json();
         } else {
+            throw new Error('Something went wrong');
         }
     };
 
@@ -15,14 +16,15 @@ class Budget {
         if (body) {
         }
         const headerToSend = headers ? headers : {};
-        return await fetch(`${this.baseUrl}/${slug}`, {
+        const res = await fetch(`${this.baseUrl}/${slug}`, {
             method,
             headers: {
                 'Content-Type': 'application/json',
                 ...headerToSend,
             },
-            body: bodyDisplay,
+            ...(method !== 'GET' ? { body: bodyDisplay } : {}),
         });
+        return this.checkResponse(res);
     };
     addWallet = async (body) => {
         return await this.customFetch('api/wallet/add', body, 'POST', {
@@ -46,6 +48,16 @@ class Budget {
     };
     addTypeOfIncome = async (body) => {
         return await this.customFetch('api/type-income', body, 'POST', {
+            Authorization: `Bearer ${this.token}`,
+        });
+    };
+    getIncome = async () => {
+        return await this.customFetch('api/incomes', {}, 'GET', {
+            Authorization: `Bearer ${this.token}`,
+        });
+    };
+    getExpence = async () => {
+        return await this.customFetch('api/expences', {}, 'GET', {
             Authorization: `Bearer ${this.token}`,
         });
     };
