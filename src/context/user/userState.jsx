@@ -20,8 +20,6 @@ export const UserState = ({ children }) => {
         wallets: [],
         typeOfExpence: [],
         typeOfIncome: [],
-        expences: [],
-        incomes: [],
         firstDate:
             localStorage.getItem('firstDate') ||
             new Date(new Date().getFullYear(), new Date().getMonth(), 1),
