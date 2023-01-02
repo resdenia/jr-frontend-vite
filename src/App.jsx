@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Lobby from './pages/Lobby';
 import Wallets from './pages/Wallets';
 import Todos from './pages/Todos';
+import Planner from './pages/Planner';
 import auth from './api/auth';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -24,6 +25,7 @@ function App() {
                     <Route path='/dashboard' element={<Lobby />} />
                     <Route path='/dashboard/wallets' element={<Wallets />} />
                     <Route path='/dashboard/todos' element={<Todos />} />
+                    <Route path='/dashboard/planner' element={<Planner />} />
                 </Routes>
             </BrowserRouter>
             <ReactQueryDevtools />
