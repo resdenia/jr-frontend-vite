@@ -8,7 +8,6 @@ import Lobby from './pages/Lobby';
 import Wallets from './pages/Wallets';
 import Todos from './pages/Todos';
 import Planner from './pages/Planner';
-import auth from './api/auth';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 function App() {
