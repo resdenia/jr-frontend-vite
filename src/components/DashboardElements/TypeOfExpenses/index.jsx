@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './TypeOfExpenses.module.css';
 import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
 import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
+import NoData from '../../NoData';
 
 const TypeOfExpenses = ({ expences }) => {
     return (
@@ -62,7 +63,7 @@ const TypeOfExpenses = ({ expences }) => {
                             </PieChart>
                         </ResponsiveContainer>
                     ) : (
-                        ''
+                        <NoData />
                     )}
                 </div>
             </div>

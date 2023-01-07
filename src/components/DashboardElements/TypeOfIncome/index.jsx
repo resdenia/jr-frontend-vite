@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './TypeOfIncome.module.css';
 import { IconArrow } from '../../../utils/iconLogic/iconListArrow';
 import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
+import NoData from '../../NoData';
 
 const TypeOfIncome = ({ incomes }) => {
     return (
@@ -63,7 +64,7 @@ const TypeOfIncome = ({ incomes }) => {
                             </PieChart>
                         </ResponsiveContainer>
                     ) : (
-                        ''
+                        <NoData />
                     )}
                 </div>
             </div>

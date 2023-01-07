@@ -10,6 +10,7 @@ import {
     Legend,
     ResponsiveContainer,
 } from 'recharts';
+import NoData from '../../NoData';
 
 // const dumpWallets = [
 //     {
@@ -120,7 +121,7 @@ const WalletsDisplay = ({ wallets }) => {
                     {renderBoxes(wallets)}
                 </div>
             ) : (
-                'No Data'
+                <NoData />
             )}
         </div>
     );
