@@ -8,6 +8,8 @@ const getExpence = async () => {
 
 export const useExpence = () => {
     const fallback = [];
-    const { data = fallback } = useQuery('expences', getExpence);
+    const { data = fallback } = useQuery('expences', getExpence, {
+        staleTime: 2000,
+    });
     return data;
 };

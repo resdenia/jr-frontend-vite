@@ -7,6 +7,8 @@ const getIncome = async () => {
 
 export const useIncome = () => {
     const fallback = [];
-    const { data = fallback } = useQuery('incomes', getIncome);
+    const { data = fallback } = useQuery('incomes', getIncome, {
+        staleTime: 2000,
+    });
     return data;
 };
