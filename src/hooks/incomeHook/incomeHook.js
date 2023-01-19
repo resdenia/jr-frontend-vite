@@ -12,3 +12,6 @@ export const useIncome = () => {
     });
     return data;
 };
+export const addIncome = async (date, amount, walletId, typeOfIncomeId) => {
+    return budget.addIncome({ date, amount, walletId, typeOfIncomeId });
+};

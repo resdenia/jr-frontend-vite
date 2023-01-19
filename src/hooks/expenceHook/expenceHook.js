@@ -13,3 +13,7 @@ export const useExpence = () => {
     });
     return data;
 };
+
+export const addExpence = async (date, amount, walletId, typeOfExpenceId) => {
+    return budget.addExpence({ date, amount, walletId, typeOfExpenceId });
+};
