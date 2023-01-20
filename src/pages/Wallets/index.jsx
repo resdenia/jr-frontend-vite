@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef, useContext, memo } from 'react';
 import { UserContext } from '../../context/user/userContext';
 import { useQuery } from 'react-query';
 
-import { useIncome } from '../../hooks/incomeHook/incomeHook';
-import { useExpence } from '../../hooks/expenceHook/expenceHook';
+import { useIncome, addIncome } from '../../hooks/incomeHook/incomeHook';
+import { useExpence, addExpence } from '../../hooks/expenceHook/expenceHook';
 import AdminLayout from '../../components/AdminLayout';
 import Controllers from '../../components/DashboardElements/Controllers';
 import DailyRange from '../../components/DashboardElements/DailyRange';
@@ -24,8 +24,7 @@ const Wallets = () => {
         wallets,
         user,
         addWallet,
-        addIncome,
-        addExpence,
+
         addTypeOfIncome,
         addTypeOfExpence,
         typeOfIncome,
