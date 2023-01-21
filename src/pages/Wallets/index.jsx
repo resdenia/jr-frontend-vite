@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext, memo } from 'react';
 import { UserContext } from '../../context/user/userContext';
-import { useQuery } from 'react-query';
+import { useQuery, useMutation } from 'react-query';
 
 import { useIncome, addIncome } from '../../hooks/incomeHook/incomeHook';
 import { useExpence, addExpence } from '../../hooks/expenceHook/expenceHook';
@@ -56,6 +56,12 @@ const Wallets = () => {
         setTypeOfPopup(type);
         setVisiblePopup(true);
     };
+    const addIncomeMutation = useMutation((incomeData) =>
+        addIncome(incomeData),
+    );
+    const addExpenceMutation = useMutation((expenceData) =>
+        addExpence(expenceData),
+    );
     const onSubmit = async (e, type, additionalData) => {
         switch (type) {
             case 'addWallet':
@@ -68,22 +74,30 @@ const Wallets = () => {
 
                 return;
             case 'addIncome':
-                addIncome({
+                addIncomeMutation.mutate({
                     date: e.dateIncome,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfIncomeId: additionalData.typeOfIncomeId,
                     // date: additionalData.date,
                 });
+                // addIncome();
                 return;
             case 'addExpence':
-                addExpence({
+                addExpenceMutation.mutate({
                     date: e.dateExpence,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfExpenceId: additionalData.typeOfExpenceId,
                     // date: additionalData.date,
                 });
+                // addExpence({
+                //     date: e.dateExpence,
+                //     amount: e.target.amount.value,
+                //     walletId: additionalData.walletId,
+                //     typeOfExpenceId: additionalData.typeOfExpenceId,
+                //     // date: additionalData.date,
+                // });
                 return;
             case 'addTypeOfExpence':
                 addTypeOfExpence({
