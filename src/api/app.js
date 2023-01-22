@@ -32,6 +32,7 @@ class Budget {
         });
     };
     addIncome = async (body) => {
+        console.log(body);
         return await this.customFetch('api/income', body, 'POST', {
             Authorization: `Bearer ${this.token}`,
         });

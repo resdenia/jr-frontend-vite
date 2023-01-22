@@ -15,5 +15,7 @@ export const useExpence = () => {
 };
 
 export const addExpence = async (date, amount, walletId, typeOfExpenceId) => {
-    return budget.addExpence({ date, amount, walletId, typeOfExpenceId });
+    return budget.addExpence(
+        JSON.stringify({ date, amount, walletId, typeOfExpenceId }),
+    );
 };
