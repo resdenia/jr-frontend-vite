@@ -63,6 +63,9 @@ const Wallets = () => {
         addExpence(expenceData),
     );
     const onSubmit = async (e, type, additionalData) => {
+        console.log(e);
+        console.log(additionalData);
+
         switch (type) {
             case 'addWallet':
                 addWallet({
@@ -75,21 +78,21 @@ const Wallets = () => {
                 return;
             case 'addIncome':
                 addIncomeMutation.mutate({
-                    date: e.dateIncome,
+                    // date: e.dateIncome,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfIncomeId: additionalData.typeOfIncomeId,
-                    // date: additionalData.date,
+                    date: additionalData.date,
                 });
                 // addIncome();
                 return;
             case 'addExpence':
                 addExpenceMutation.mutate({
-                    date: e.dateExpence,
+                    // date: e.dateExpence,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfExpenceId: additionalData.typeOfExpenceId,
-                    // date: additionalData.date,
+                    date: additionalData.date,
                 });
                 // addExpence({
                 //     date: e.dateExpence,
