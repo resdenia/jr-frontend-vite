@@ -78,29 +78,20 @@ const Wallets = () => {
                 return;
             case 'addIncome':
                 addIncomeMutation.mutate({
-                    // date: e.dateIncome,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfIncomeId: additionalData.typeOfIncomeId,
                     date: additionalData.date,
                 });
-                // addIncome();
                 return;
             case 'addExpence':
                 addExpenceMutation.mutate({
-                    // date: e.dateExpence,
                     amount: e.target.amount.value,
                     walletId: additionalData.walletId,
                     typeOfExpenceId: additionalData.typeOfExpenceId,
                     date: additionalData.date,
                 });
-                // addExpence({
-                //     date: e.dateExpence,
-                //     amount: e.target.amount.value,
-                //     walletId: additionalData.walletId,
-                //     typeOfExpenceId: additionalData.typeOfExpenceId,
-                //     // date: additionalData.date,
-                // });
+
                 return;
             case 'addTypeOfExpence':
                 addTypeOfExpence({

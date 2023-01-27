@@ -2,7 +2,8 @@ import { useQuery } from 'react-query';
 import budget from '../../api/app';
 
 const getIncome = async () => {
-    return await budget.getIncome();
+    const token = localStorage.getItem('jwtToken');
+    return await budget.getIncome(token);
 };
 
 export const useIncome = () => {

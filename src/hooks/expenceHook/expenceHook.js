@@ -3,7 +3,8 @@ import { useQuery } from 'react-query';
 import budget from '../../api/app';
 
 const getExpence = async () => {
-    return await budget.getExpence();
+    const token = localStorage.getItem('jwtToken');
+    return await budget.getExpence(token);
 };
 
 export const useExpence = () => {

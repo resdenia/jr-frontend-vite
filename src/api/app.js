@@ -52,14 +52,14 @@ class Budget {
             Authorization: `Bearer ${this.token}`,
         });
     };
-    getIncome = async () => {
+    getIncome = async (token) => {
         return await this.customFetch('api/incomes', {}, 'GET', {
-            Authorization: `Bearer ${this.token}`,
+            Authorization: `Bearer ${token}`,
         });
     };
-    getExpence = async () => {
+    getExpence = async (token) => {
         return await this.customFetch('api/expences', {}, 'GET', {
-            Authorization: `Bearer ${this.token}`,
+            Authorization: `Bearer ${token}`,
         });
     };
 }
