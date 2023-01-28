@@ -10,10 +10,16 @@ import {
     XAxis,
     YAxis,
 } from 'recharts';
+
+import { useIncome } from '../../../hooks/incomeHook/incomeHook';
+import { useExpence } from '../../../hooks/expenceHook/expenceHook';
 import { convertDataTrigger } from '../../../utils/converts';
 
-const ViewTriggers = ({ incomes, expences }) => {
+const ViewTriggers = () => {
     const [displayData, setDisplayData] = useState([]);
+    const incomes = useIncome();
+    const expences = useExpence();
+
     // Date.prototype.addDays = function(days) {
     // 	var date = new Date(this.valueOf());
     // 	date.setDate(date.getDate() + days);
@@ -32,7 +38,7 @@ const ViewTriggers = ({ incomes, expences }) => {
     useEffect(() => {
         setDisplayData([...convertDataTrigger(incomes, expences)]);
         console.log(displayData);
-    }, []);
+    }, [incomes, expences]);
 
     return (
         <div className={styles.wrapperInfo}>
