@@ -10,6 +10,21 @@ export const convertDataTrigger = (incomes, expences) => {
     //converted Data incomes
     incomes.map((income) => {
         const mainId = income.date.slice(0, 9).split('-').join('_');
+        const mainDate = income.date.slice(0, 9);
+        const incomeFilteredI = convertedData.filter(
+            (item) => item[mainId] === 0,
+        );
+
+        if (!incomeFiltered) {
+            convertedData.push({
+                name: mainDate,
+                [mainId]: 0,
+                income: income.amount,
+                expence: 0,
+            });
+        } else {
+            incomeFiltered.income = incomeFiltered.income + income.amount;
+        }
     });
 
     //converted Data expences
