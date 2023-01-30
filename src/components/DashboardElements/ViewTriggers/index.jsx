@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './ViewTriggers.module.css';
 import {
     LineChart,
@@ -11,14 +11,14 @@ import {
     YAxis,
 } from 'recharts';
 
-import { useIncome } from '../../../hooks/incomeHook/incomeHook';
-import { useExpence } from '../../../hooks/expenceHook/expenceHook';
+// import { useIncome } from '../../../hooks/incomeHook/incomeHook';
+// import { useExpence } from '../../../hooks/expenceHook/expenceHook';
 import { convertDataTrigger } from '../../../utils/converts';
 
-const ViewTriggers = () => {
+const ViewTriggers = ({ expences, incomes }) => {
     const [displayData, setDisplayData] = useState([]);
-    const incomes = useIncome();
-    const expences = useExpence();
+    // const incomes = useIncome();
+    // const expences = useExpence();
 
     // Date.prototype.addDays = function(days) {
     // 	var date = new Date(this.valueOf());
@@ -35,9 +35,14 @@ const ViewTriggers = () => {
     // 	}
     // 	return dateArray;
     // }
-    useEffect(() => {
+
+    const populateData = useCallback(() => {
         setDisplayData([...convertDataTrigger(incomes, expences)]);
-        console.log(displayData);
+    }, [displayData]);
+
+    useEffect(() => {
+        populateData();
+        console.log('isUPdated?');
     }, [incomes, expences]);
 
     return (

@@ -163,7 +163,10 @@ const Wallets = () => {
                             />
                         </div>
                         <div className={styles.wrapperSection}>
-                            <ViewTriggers />
+                            <ViewTriggers
+                                incomes={incomes ? incomes : []}
+                                expences={expences ? expences : []}
+                            />
                         </div>
                         <div className={styles.wrapperSection}>
                             <WalletsDisplay wallets={wallets ? wallets : []} />
