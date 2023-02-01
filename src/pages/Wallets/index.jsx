@@ -63,9 +63,6 @@ const Wallets = () => {
         addExpence(expenceData),
     );
     const onSubmit = async (e, type, additionalData) => {
-        console.log(e);
-        console.log(additionalData);
-
         switch (type) {
             case 'addWallet':
                 addWallet({
