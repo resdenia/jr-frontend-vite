@@ -17,25 +17,6 @@ import { convertDataTrigger } from '../../../utils/converts';
 
 const ViewTriggers = ({ expences, incomes }) => {
     const [displayData, setDisplayData] = useState([]);
-    // const incomes = useIncome();
-    // const expences = useExpence();
-
-    // Date.prototype.addDays = function(days) {
-    // 	var date = new Date(this.valueOf());
-    // 	date.setDate(date.getDate() + days);
-    // 	return date;
-    // }
-
-    // function getDates(startDate, stopDate) {
-    // 	var dateArray = new Array();
-    // 	var currentDate = startDate;
-    // 	while (currentDate <= stopDate) {
-    // 		dateArray.push(new Date (currentDate));
-    // 		currentDate = currentDate.addDays(1);
-    // 	}
-    // 	return dateArray;
-    // }
-
     const populateData = useCallback(() => {
         setDisplayData([...convertDataTrigger(incomes, expences)]);
     }, [displayData]);
