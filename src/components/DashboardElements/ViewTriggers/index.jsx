@@ -11,8 +11,6 @@ import {
     YAxis,
 } from 'recharts';
 
-// import { useIncome } from '../../../hooks/incomeHook/incomeHook';
-// import { useExpence } from '../../../hooks/expenceHook/expenceHook';
 import { convertDataTrigger } from '../../../utils/converts';
 
 const ViewTriggers = ({ expences, incomes }) => {
