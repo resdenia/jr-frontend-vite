@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext, memo } from 'react';
 import { UserContext } from '../../context/user/userContext';
-import { useQuery, useMutation } from 'react-query';
+import { useMutation } from 'react-query';
 
 import { useIncome, addIncome } from '../../hooks/incomeHook/incomeHook';
 import { useExpence, addExpence } from '../../hooks/expenceHook/expenceHook';
