@@ -59,17 +59,6 @@ export const convertDataTrigger = (incomes, expences) => {
     });
     //converted Data expences
 
-    const exampleData = {
-        name: '16-10-2022',
-        income: 3000,
-        expence: 4000,
-    };
-
-    const exampleData_v2 = {
-        name: '17-10-2022',
-        income: 3000,
-        expence: 4000,
-    };
     console.log(convertedData);
     return convertedData.sort(compare);
 };
