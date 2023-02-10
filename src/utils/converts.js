@@ -57,7 +57,6 @@ export const convertDataTrigger = (incomes, expences) => {
                 expenceFiltered[0].expence + expence.amount;
         }
     });
-    //converted Data expences
 
     console.log(convertedData);
     return convertedData.sort(compare);
