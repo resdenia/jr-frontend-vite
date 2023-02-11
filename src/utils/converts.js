@@ -58,6 +58,5 @@ export const convertDataTrigger = (incomes, expences) => {
         }
     });
 
-    console.log(convertedData);
     return convertedData.sort(compare);
 };
