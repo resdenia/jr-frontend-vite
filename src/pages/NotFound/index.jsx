@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './NotFound.module.css';
 
 const NotFound = () => {
-    return <div></div>;
+    return <div>Not Found</div>;
 };
 
 export default NotFound;
