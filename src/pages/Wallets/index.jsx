@@ -20,7 +20,6 @@ import styles from './Wallets.module.css';
 
 const Wallets = () => {
     const {
-        balance,
         wallets,
         user,
         addWallet,
